@@ -1,0 +1,667 @@
+@media (min-width: 1095px) {
+    .mobile-version {
+        display: none;
+    }
+}
+
+@media (min-width: 0px) and (max-width: 1094px) {
+    .desktop-version {
+        display: none;
+    }
+
+    .mobile-version {
+        display: block;
+    }
+
+
+    .mobile-offcanvas-menu {
+        width: 100% !important;
+        background-color: var(--background) !important;
+    }
+
+
+
+    /* // X-Small devices (portrait phones, less than 576px) */
+    @media (max-width: 575.98px) {
+        .app {
+            background-color: var(--bg-secondary);
+        }
+
+        .container-custom {
+            padding: 0px 14px !important;
+        }
+
+        .row {
+            --bs-gutter-x: 0 !important;
+        }
+
+        .mobile-menu-bottom {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: var(--bg-secondary);
+            padding: 10px 20px;
+            box-shadow: 0 -5px 5px -5px #ffffff44;
+        }
+
+        .mobile-menu-items svg {
+            color: var(--gray-10);
+            font-size: 25px;
+            text-align: center;
+        }
+
+        .mobile-menu-items a:active svg {
+            color: var(--primary-base);
+
+        }
+
+        .mobile-menu-items h6 {
+            font-size: 12px;
+            padding-top: 5px;
+            color: var(--gray-10);
+        }
+
+        .Mobile-version-slider {
+            position: relative;
+        }
+
+        .Mobile-version-slider img {
+            width: 100%;
+            height: 185px;
+        }
+
+        .mobile-home-slider-menu-area {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 10px 30px;
+        }
+
+        .mobile-home-slider-menu-area svg {
+            font-size: 20px;
+            color: #fff;
+        }
+
+        .mobile-home-slider-menu-area input {
+            padding: 0px 15px;
+            border: none;
+            border-radius: 10px;
+            background-color: #e6e7e87a;
+            width: 50vw;
+        }
+
+        .mobile-home-slider-menu-area input::placeholder {
+            color: #cdc9c9fc;
+        }
+
+        .mobile-notice-area {
+            padding: 5px 10px;
+            margin-top: -10px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            position: relative;
+            background-color: var(--background);
+        }
+
+        .mobile-notice-area svg {
+            font-size: 10px;
+            color: var(--text-simple-black);
+        }
+
+        .mobile-notice-slider a {
+            font-size: 8px !important;
+            color: var(--text-simple-black) !important;
+        }
+
+        .mobile-notice-btn a {
+            color: var(--text-simple-black);
+        }
+
+        .mobile-home-sft-area a {
+            color: var(--text-primary);
+        }
+
+        .mobile-home-sft-area svg {
+            font-size: 25px;
+            color: var(--blue-6-seed);
+        }
+
+        .mobile-home-sft-area p {
+            font-size: 12px;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .mobile-home-sft-area>.row {
+            --bs-gutter-x: 0;
+        }
+
+        .mobile-home-sft-area>.row div {
+            padding: 0 !important;
+        }
+
+        .crypto-thrade-area h6 {
+            color: var(--text-primary);
+            font-size: 12px;
+        }
+
+        .crypto-thrade-area h6 small {
+            color: red;
+            font-size: 10px;
+        }
+
+        .crypto-thrade-area h5 {
+            color: red;
+            font-size: 16px;
+        }
+
+        .crypto-thrade-area p {
+            color: var(--text-simple-black);
+            font-size: 10px;
+            margin-bottom: 8px !important;
+        }
+
+        .crypto-thrade-area h4 {
+            color: blue;
+            font-size: 9px;
+            font-weight: 500;
+        }
+
+        .crypto-thrade-area h4 svg {
+            color: blue;
+            border-radius: 50%;
+            background-color: var(--text-simple-black);
+            font-size: 9px;
+            padding: 2px 4px;
+            margin-left: 5px;
+        }
+
+        .mobile-crypto-chain-header {
+            /* padding-bottom: 10px; */
+            border-bottom: 1px solid #fff;
+            position: relative;
+        }
+
+        .mobile-crypto-chain-header-item h5 {
+            font-size: 14px;
+            padding-right: 25px;
+            color: var(--text-simple-black);
+            padding-bottom: 5px;
+        }
+
+        .mobile-crypto-chain-header-item h5:active {
+            border-bottom: 3px solid red;
+        }
+
+        .mobile-crypto-chain-header-item span {
+            font-size: 10px;
+        }
+
+
+        .home-crypto-data-title p {
+            font-size: 12px;
+            color: var(--text-simple-black);
+            font-weight: 500;
+            margin: 0;
+        }
+
+        .home-crypto-data-list h6 {
+            font-size: 12px;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .home-crypto-data-list p {
+            font-size: 10px;
+            color: var(--text-simple-black);
+            font-weight: bold;
+        }
+
+        .home-crypto-data-list span {
+            font-size: 10px;
+            font-weight: 500 !important;
+            border-radius: 2px !important;
+        }
+
+        /* User login  */
+        .user-login-mobile {
+            height: 100vh;
+        }
+
+        .user-login-title {
+            background-color: var(--black);
+            padding: 15px 0 10px 0;
+        }
+
+        .user-login-title h4 {
+            font-size: 20px;
+            margin-bottom: 4px;
+            color: var(--text-primary);
+        }
+
+        .user-login-title p {
+            font-size: 12px;
+            color: var(--text-simple-black);
+        }
+
+        .user-mobile-login-form {
+            margin-top: -10px;
+            background-color: var(--bg-secondary);
+            border-radius: 20px;
+        }
+
+        .user-login-mobile label {
+            color: var(--text-primary);
+            font-size: 16px;
+            padding: 5px 0;
+            font-weight: 400;
+        }
+
+        .user-login-mobile input {
+            padding: 10px 5px;
+            background-color: #8b8c8f3c;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            color: var(--text-primary);
+        }
+
+        .user-login-mobile input::placeholder {
+            font-size: 15px;
+            font-weight: 400;
+        }
+
+        .user-login-mobile button {
+            background-color: #8b8c8f3c;
+            border: none;
+            color: var(--text-simple-black);
+            padding: 10px 0;
+            border-radius: 5px;
+        }
+
+        .user-login-mobile button:hover {
+            background-color: blue;
+            color: #fff;
+
+        }
+
+
+        /*************** Markets Section  ************/
+
+        .markets-header-section {
+            padding: 10px 0;
+        }
+
+        .markets-header-section svg {
+            font-size: 20px;
+            color: #fff;
+        }
+
+        .markets-header-section input {
+            padding: 0px 15px;
+            border: none;
+            border-radius: 10px;
+            background-color: var(--mobile-search-input);
+            width: 80vw;
+            outline: none;
+            color: var(--text-primary);
+        }
+
+        .markets-header-section input::placeholder {
+            color: #cdc9c9fc;
+            font-size: 10px;
+            margin-top: -100px;
+
+        }
+
+        .Markets-Menu-section {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+        }
+
+        .Markets-Menu-section h4 {
+            font-size: 15px;
+            color: var(--gray-10);
+        }
+
+        .Markets-Menu-section span {
+            font-size: 10px;
+            color: blue;
+            border: 1px solid blue;
+            padding: 2px 3px;
+            font-weight: 300;
+            margin-left: 10px;
+            border-radius: 2px;
+        }
+
+        .markets-content-section {
+            background-color: var(--bg-101);
+            border-radius: 15px 15px 0 0;
+            padding: 10px 0;
+            /* height: 82vh; */
+        }
+
+        .markets-content-menu {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+        }
+
+        .markets-content-menu h5 {
+            font-size: 12px;
+            color: var(--gray-10);
+
+        }
+
+        .markets-content-menu-hr {
+            margin: 0;
+        }
+
+        .market-content-sub-menu {
+            padding: 10px 0;
+        }
+
+        .market-content-sub-menu span {
+            font-size: 10px;
+            color: var(--gray-10);
+            margin-right: 10px;
+            font-weight: 500;
+            background-color: rgba(36, 36, 236, 0.34);
+            padding: 3px 7px;
+            border-radius: 10px;
+        }
+
+        .home-crypto-data-list small {
+            font-size: 8px;
+            color: var(--text-simple-black);
+            font-weight: 400;
+        }
+
+        .active-markets-content-menu {
+            color: #fff !important;
+            font-weight: 800;
+        }
+
+        .mobile-user-dashboard {
+            height: 100vh;
+        }
+
+        .mobile-user-dashboard-menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 14px !important;
+            width: 90vw;
+        }
+
+        .mobile-user-dashboard-menu h6 {
+            font-size: 15px;
+            color: var(--gray-10);
+        }
+
+        .mobile-user-total-value {
+            padding: 10px 8px;
+            background-color: var(--bg-101);
+            border-radius: 5px;
+        }
+
+        .mobile-user-total-value span {
+            font-size: 10px;
+            color: var(--gray-10);
+            padding: 5px 0;
+        }
+
+        .mobile-user-total-value span svg {
+            margin-left: 8px;
+        }
+
+        .mobile-user-total-value h2 {
+            color: var(--text-primary);
+            font-size: 18px;
+        }
+
+        .mobile-user-total-value h2 small {
+            color: var(--text-primary);
+            font-size: 10px;
+        }
+
+        .mobile-user-total-value h2 svg {
+            color: var(--gray-10);
+            font-size: 12px;
+        }
+
+        .mobile-user-total-value h4 {
+            color: var(--gray-10);
+            font-size: 12px;
+        }
+
+        .mobile-dashboard-btn {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        .mobile-dashboard-btn button {
+            font-size: 10px;
+            color: var(--text-primary);
+            --bs-btn-border-color: var(--gray-10) !important;
+        }
+
+        .mobile-user-protfolio {
+            background-color: var(--bg-101);
+            border-radius: 20px 20px 0 0;
+            margin-top: 10px;
+        }
+
+        .mobile-user-protfolio-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        .mobile-user-protfolio-title h2 {
+            font-size: 18px;
+            color: var(--text-primary);
+        }
+
+        .mobile-user-protfolio {
+            height: 70vh;
+        }
+
+        .mobile-user-protfolio-menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        .mobile-user-protfolio-menu-item h4 {
+            font-size: 15px;
+            color: var(--text-primary);
+        }
+
+        .mobile-user-protfolio-menu-item h4 svg {
+            font-size: 15px;
+            color: var(--text-primary);
+            margin-right: 15px;
+        }
+
+        .mobile-user-protfolio-menu-item h5 {
+            font-size: 15px;
+            color: var(--text-primary);
+        }
+
+        .mobile-user-protfolio-menu-item h5 svg {
+            font-size: 15px;
+            color: var(--text-primary);
+            margin-left: 5px;
+        }
+
+        .mobile-offcanvas-menu-hide svg {
+            color: var(--text-primary);
+            font-size: 20px;
+        }
+
+        .theme-moon-icon {
+            font-size: 20px;
+            color: var(--gray-10);
+        }
+
+        .theme-sun-icon {
+            font-size: 20px;
+            color: var(--gray-10);
+        }
+
+        .mobile-customer-care-menu-icon {
+            font-size: 20px;
+            color: var(--gray-10);
+            margin-left: 10px;
+        }
+
+        .mobile-user-info-menu h2 {
+            font-size: 25px;
+            color: var(--text-primary);
+            font-weight: bold;
+        }
+
+        .mobile-user-info-menu p {
+            font-size: 12px;
+            color: var(--gray-10);
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .mobile-user-kyc-verify-btn a {
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .mobile-user-vip-area {
+            color: rgb(179, 123, 51);
+            display: block;
+            font-size: 12px;
+            font-weight: 500;
+            background-color: rgb(244, 220, 190) !important;
+            padding: 10px 10px;
+            border-radius: 5px 5px 0 0;
+            margin-top: 5px;
+        }
+
+        .mobile-user-vip-area p {
+            margin: 0;
+        }
+
+        .mobile-user-vip-area svg {
+            font-size: 12px;
+        }
+
+
+
+        .mobile-toogle-menu-items-area a {
+            color: var(--text-primary);
+            display: block;
+            font-size: 12px;
+            font-weight: 500;
+            padding: 2px 10px;
+        }
+
+        .mobile-toogle-menu-items-area p {
+            margin: 0;
+        }
+
+        .mobile-toogle-menu-items-area svg {
+            font-size: 12px;
+        }
+
+        .mobile-kyc-page {
+            height: 100vh;
+        }
+
+        .mobile-kyc-page h2 {
+            font-size: 18px;
+            text-align: center;
+            color: var(--text-primary);
+            padding: 20px 10px 0 0;
+        }
+
+        .mobile-kyc-btn a {
+            display: block;
+            color: var(--text-primary);
+            background-color: var(--bg-101);
+            padding: 10px 10px;
+            border-radius: 5px;
+            font-weight: 400;
+            font-size: 15px;
+            margin-bottom: 15px;
+        }
+
+        .mobile-kyc-btn svg {
+            font-size: 15px;
+            margin-right: 10px;
+            color: blue;
+        }
+
+        .mobile-kyc-driving-license {
+            height: 150vh;
+        }
+
+        .mobile-kyc-driving-license h2 {
+            font-size: 18px;
+            text-align: center;
+            color: var(--text-primary);
+            padding: 20px 0 10px 0;
+        }
+
+        .mobile-kyc-webcam button{
+            padding: 5px 20px;
+            margin: 10px;
+        }
+
+        .mobile-future-coin-item{
+            background-color: red;
+            /* padding: 5px 40px; */
+            border-radius: 5px;
+        }
+        .mobile-future-coin-item > .col-6{
+            padding: 1px;
+        }
+        .mobile-future-coin-item p{
+            margin: 0;
+            font-size: 15px;
+            font-weight: 600;
+            
+        }
+        .mobile-future-coin-item-active{
+            background-color: blue;
+            border-radius: 5px;
+        }
+
+    }
+
+    /* // Small devices (landscape phones, less than 768px) */
+    @media (max-width: 767.98px) {}
+
+    /* // Medium devices (tablets, less than 992px) */
+    @media (max-width: 991.98px) {}
+
+    .mobile-kyc-webcam video {
+        height: 40vh;
+        width: 100%;
+    }
+
+
+}
+
+/* .file-upload .file-select .file-select-button {
+    background: #dce4ec;
+    padding: 0 10px;
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+} */
