@@ -222,7 +222,8 @@ const Footer = () => {
                     <Link to=''><i className="fa-brands fa-facebook-messenger"></i></Link>
                     <Link to=''><i className="fa-regular fa-envelope"></i></Link>
                 </div>
-                <i className="fa-solid fa-headset support-btn-show"></i>
+                <Link to='/ticket'><i className="fa-solid fa-headset support-btn-show"></i></Link>
+                
             </div>
 
 

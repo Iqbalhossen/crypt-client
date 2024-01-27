@@ -43,6 +43,9 @@ import KycPage from './Components/Page/User/KycPage/KycPage';
 import KycPrivateRoute from './Route/KycPrivateRoute';
 import KycRoute from './Route/KycRoute';
 import Demo from './Components/Demo/Demo';
+import SupportTickets from './Components/Page/SupportTickets/SupportTickets/SupportTickets';
+import SupportTicketsAdd from './Components/Page/SupportTickets/SupportTicketsAdd/SupportTicketsAdd';
+import SupportTicketsView from './Components/Page/SupportTickets/SupportTicketsView/SupportTicketsView';
 function App() {
 
   return (
@@ -66,6 +69,9 @@ function App() {
           <Route path="/user/trade/with/:name/:id" element={<UserPrivateRoute><ThradeNow /></UserPrivateRoute>} />
           <Route path="/user/practice/trade/with/:name/:id" element={<UserPrivateRoute><PracticeTradeNow /></UserPrivateRoute>} />
           <Route path="/user/id-auth/Kyc" element={<UserPrivateRoute><KycRoute><KycPage /></KycRoute></UserPrivateRoute>} />
+          <Route path="/ticket" element={<UserPrivateRoute><SupportTickets/></UserPrivateRoute>} />
+          <Route path="/ticket/new" element={<UserPrivateRoute><SupportTicketsAdd/></UserPrivateRoute>} />
+          <Route path="/ticket/view/:id" element={<UserPrivateRoute><SupportTicketsView/></UserPrivateRoute>} />
         </Route>
         <Route path="login" element={<LoginRoute><LoginForm /></LoginRoute>} />
         <Route path="register" element={<LoginRoute><RegisterForm /></LoginRoute>} />

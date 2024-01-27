@@ -21,34 +21,34 @@ const PracticeTradeHistory = () => {
     }, [])
     return (
         <>
-             <section className='container-custom'>
+            <section className='container-custom'>
 
-<div className="user-deposit-title pt-5">
-    <h1>Trade History</h1>
-</div>
-<div className="user-referral-history-area mt-3 mb-5">
-    <div className="user-referral-history-items">
-        <table className='user-referral-history-table'>
-            <thead>					
-                <tr class="table-headers">
-                    <th>S.N.</th>
-                    <th>Crypto Currency</th>
-                    <th>Amount</th>
-                    <th>High/Low</th>
-                    <th>Result</th>
-                    <th>Status</th>
-                    <th>Date</th>
-                </tr>
-            </thead>
-            <tbody>
-            {tradeData.map((data, index) => <SingleItem data={data} index={index} key={data?._id}></SingleItem>)}
-                
-            </tbody>
-        </table>
-    </div>
-</div>
+                <div className="user-deposit-title pt-5">
+                    <h1>Practice Trade History</h1>
+                </div>
+                <div className="user-referral-history-area mt-3 mb-5">
+                    <div className="user-referral-history-items">
+                        <table className='user-referral-history-table'>
+                            <thead>
+                                <tr class="table-headers">
+                                    <th>S.N.</th>
+                                    <th>Crypto Currency</th>
+                                    <th>Amount</th>
+                                    <th>High/Low</th>
+                                    <th>Result</th>
+                                    <th>Status</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {tradeData.map((data, index) => <SingleItem data={data} index={index} key={data?._id}></SingleItem>)}
 
-</section>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </section>
         </>
     );
 };
