@@ -61,7 +61,7 @@ export default function Header() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/frontend/home/menu/view`, {
+    fetch(`http://66.29.142.198:5000/api/frontend/home/menu/view`, {
       method: 'GET',
     })
       .then(res => res.json())
@@ -75,7 +75,7 @@ export default function Header() {
   const filteredMenu = data.filter((data) => data.slug !== '/');
   const [logoData, setLogoData] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/api/frontend/home/header/setting/view`, {
+    fetch(`http://66.29.142.198:5000/api/frontend/home/header/setting/view`, {
       method: 'GET',
     })
       .then((res) => res.json())
@@ -89,7 +89,7 @@ export default function Header() {
       <header className='header-area px-3 desktop-version'>
         <div className="logo">
           <Link to='/'>
-            <img src={`http://localhost:5000/${logoData?.logo}`} alt="" />
+            <img src={`http://66.29.142.198:5000/${logoData?.logo}`} alt="" />
             {/* <img src={logo} alt="" /> */}
           </Link>
         </div>

@@ -21,7 +21,7 @@ const Sliders = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/api/frontend/home/slider/view`, {
+        fetch(`http://66.29.142.198:5000/api/frontend/home/slider/view`, {
             method: 'GET',
         })
             .then(res => res.json())
@@ -73,7 +73,7 @@ const Sliders = () => {
                     >
 
                         {data.map((data, index) => <SwiperSlide>
-                            <img src={`http://localhost:5000/${data?.image_url}`} alt="" />
+                            <img src={`http://66.29.142.198:5000/${data?.image_url}`} alt="" />
                         </SwiperSlide>)}
 
 

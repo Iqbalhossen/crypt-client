@@ -12,6 +12,7 @@ import ChooseGffex from './ChooseGffex/ChooseGffex'
 import MobileHome from '../Mobile/Home/MobileHome'
 import MobileMenu from '../Mobile/Home/MobileMenu/MobileMenu'
 import SingleHome from './SingleHome'
+import Testimonial from './Testimonial/Testimonial'
 
 
 export default function Home() {
@@ -19,7 +20,7 @@ export default function Home() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/frontend/home/home/section`, {
+    fetch(`http://66.29.142.198:5000/api/frontend/home/home/section`, {
       method: 'GET',
     })
       .then(res => res.json())
@@ -45,6 +46,7 @@ export default function Home() {
       <JoinCommunity></JoinCommunity>
       <TradeApp></TradeApp>
      */}
+     <Testimonial></Testimonial>
       <MobileHome></MobileHome>
     </>
   )

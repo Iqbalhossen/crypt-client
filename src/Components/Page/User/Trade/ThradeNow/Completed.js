@@ -7,7 +7,7 @@ const Completed = ({ data }) => {
     const [results, setResults] = useState([])
     useEffect(() => {
         if (data?._id) {
-            fetch(`http://localhost:5000/api/user/trade/log/single/view/${data?._id}`, {
+            fetch(`http://66.29.142.198:5000/api/user/trade/log/single/view/${data?._id}`, {
                 method: 'GET',
             })
                 .then(res => res.json())

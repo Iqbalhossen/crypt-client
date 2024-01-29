@@ -17,7 +17,7 @@ const SingleHome = ({data}) => {
     const [singleData, setSingleData] = useState([]);
 
     useEffect(() => {
-            fetch(`http://localhost:5000/api/frontend/page/menu/single/item/view/${data.name}/${data.menu_id}`, {
+            fetch(`http://66.29.142.198:5000/api/frontend/page/menu/single/item/view/${data.name}/${data.menu_id}`, {
                 method: 'GET',
             })
                 .then(res => res.json())

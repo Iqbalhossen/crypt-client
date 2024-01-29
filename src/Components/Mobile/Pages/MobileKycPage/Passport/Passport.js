@@ -45,7 +45,7 @@ const Passport = () => {
                 }
             };
             axios
-                .post(`http://localhost:5000/api/kyc/verify/store`, userData, config)
+                .post(`http://66.29.142.198:5000/api/kyc/verify/store`, userData, config)
                 .then(data => {
                     event.target.reset();
                     setResults(data)

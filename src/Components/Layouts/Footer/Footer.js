@@ -26,7 +26,7 @@ const Footer = () => {
 
     const [data, setData] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/api/frontend/home/footer/setting/view`, {
+        fetch(`http://66.29.142.198:5000/api/frontend/home/footer/setting/view`, {
             method: 'GET',
         })
             .then((res) => res.json())
@@ -35,7 +35,7 @@ const Footer = () => {
 
     const [Newsletter, setNewsletter] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/api/frontend/home/newsletter/setting/view`, {
+        fetch(`http://66.29.142.198:5000/api/frontend/home/newsletter/setting/view`, {
             method: 'GET',
         })
             .then((res) => res.json())
@@ -66,7 +66,7 @@ const Footer = () => {
             }
         };
         axios
-            .post(`http://localhost:5000/api/user/subscribe/store`, dataValue, config)
+            .post(`http://66.29.142.198:5000/api/user/subscribe/store`, dataValue, config)
             .then(data => {
                 toast.success(`${data?.data?.message}`, {
                     position: "top-right",
@@ -111,7 +111,7 @@ const Footer = () => {
                             <Link href="/" className="logo">
                                 {/* <img src={logo} alt='' /> */}
                                 {/* <img src={logo} alt='' /> */}
-                                <img src={`http://localhost:5000/${data?.logo}`} alt="" />
+                                <img src={`http://66.29.142.198:5000/${data?.logo}`} alt="" />
                             </Link>
                             <p> {data?.dis}</p>
                             <ul className="post__share">

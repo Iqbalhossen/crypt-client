@@ -17,7 +17,7 @@ const PracticeTradeNow = () => {
     const [cryptoData, setCryptoData] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/api/admin/crypto/currency/single/view/${id}`, {
+        fetch(`http://66.29.142.198:5000/api/admin/crypto/currency/single/view/${id}`, {
             method: 'GET',
         })
             .then(res => res.json())
@@ -64,7 +64,7 @@ const PracticeTradeNow = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/api/admin/trade/setting/view`, {
+        fetch(`http://66.29.142.198:5000/api/admin/trade/setting/view`, {
             method: 'GET',
         })
             .then(res => res.json())
@@ -99,7 +99,7 @@ const PracticeTradeNow = () => {
                 }
             };
             axios
-                .post(`http://localhost:5000/api/user/Practice/trade/log/store`, userData, config)
+                .post(`http://66.29.142.198:5000/api/user/Practice/trade/log/store`, userData, config)
                 .then(data => {
                     if(data.data.success === true){
                         toast.success(`${data.data.message}`, {

@@ -21,7 +21,7 @@ const LoginForm = () => {
     const handleRegister = event => {
         refSubmitDis.current.setAttribute("disabled", true);
         event.preventDefault();
-        fetch('http://localhost:5000/api/user/auth/login', {
+        fetch('http://66.29.142.198:5000/api/user/auth/login', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

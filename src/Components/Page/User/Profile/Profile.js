@@ -9,7 +9,7 @@ const Profile = () => {
     const [DepositData, settDepositData] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/api/user/deposit/available/balance/${authUser?._id}`, {
+        fetch(`http://66.29.142.198:5000/api/user/deposit/available/balance/${authUser?._id}`, {
             method: 'GET',
         })
             .then(res => res.json())
@@ -24,7 +24,7 @@ const Profile = () => {
     const [KYCData, setKYCData] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:5000/api/kyc/verify/view/${authUser?._id}`, {
+        fetch(`http://66.29.142.198:5000/api/kyc/verify/view/${authUser?._id}`, {
             method: 'GET',
         })
             .then(res => res.json())

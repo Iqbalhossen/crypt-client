@@ -7,7 +7,7 @@ const TradeApp = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/api/frontend/home/gffex/app/view`, {
+        fetch(`http://66.29.142.198:5000/api/frontend/home/gffex/app/view`, {
             method: 'GET',
         })
             .then(res => res.json())
@@ -20,7 +20,7 @@ const TradeApp = () => {
 
     const [dataBtn, setDataBtn] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/api/frontend/home/gffex/app/btn/view`, {
+        fetch(`http://66.29.142.198:5000/api/frontend/home/gffex/app/btn/view`, {
             method: 'GET',
         })
             .then(res => res.json())
@@ -38,7 +38,7 @@ const TradeApp = () => {
                 <p>{data?.dis}</p>
                 <div className="download_home-App-content">
                     <div class="download_home-App-content-logo">
-                        <img class="download_deviceLogo__mGXRx" src={`http://localhost:5000/${data?.image}`} alt="Gffexvip" loading="lazy" />
+                        <img class="download_deviceLogo__mGXRx" src={`http://66.29.142.198:5000/${data?.image}`} alt="Gffexvip" loading="lazy" />
                     </div>
                     <div className="download_home-App-content-info">
                         <div className="download_downloadInfoGroup__ITmEa">

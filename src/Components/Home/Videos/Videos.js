@@ -8,7 +8,7 @@ export default function Videos() {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/api/frontend/home/videos/view`, {
+        fetch(`http://66.29.142.198:5000/api/frontend/home/videos/view`, {
             method: 'GET',
         })
             .then(res => res.json())
@@ -23,7 +23,7 @@ export default function Videos() {
     return (
         <>
             <section className='videos-section desktop-version'>
-                <video src={`http://localhost:5000/${data?.video_url}`} autoPlay loop muted />
+                <video src={`http://66.29.142.198:5000/${data?.video_url}`} autoPlay loop muted />
                 <div className="video-content-section">
                     <h1>{data.title_one}<br />{data.title_two}</h1>
                     <p>

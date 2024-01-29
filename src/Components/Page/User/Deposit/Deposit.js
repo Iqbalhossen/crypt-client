@@ -13,7 +13,7 @@ const Deposit = () => {
     const [depostData, setdepostData] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/api/user/payment/gateways/manual/all/view/${authUser?._id}`, {
+        fetch(`http://66.29.142.198:5000/api/user/payment/gateways/manual/all/view/${authUser?._id}`, {
             method: 'GET',
         })
             .then(res => res.json())

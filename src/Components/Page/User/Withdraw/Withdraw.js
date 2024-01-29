@@ -11,7 +11,7 @@ const Withdraw = () => {
     const [WithdrawMethodData, setWithdrawMethodData] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/api/user/withdrawal/method/view`, {
+        fetch(`http://66.29.142.198:5000/api/user/withdrawal/method/view`, {
             method: 'GET',
         })
             .then(res => res.json())
@@ -50,7 +50,7 @@ const Withdraw = () => {
             }
         };
         axios
-            .post(`http://localhost:5000/api/user/withdrawal/amount/check`, storeData, config)
+            .post(`http://66.29.142.198:5000/api/user/withdrawal/amount/check`, storeData, config)
             .then(data => {
                 refGatewayShow.current.style.display = "none";
                 refConfirmWithdarwFormSubmitDis.current.style.display = "block";
@@ -98,7 +98,7 @@ const Withdraw = () => {
             }
         };
         axios
-            .post(`http://localhost:5000/api/user/withdrawal/confirm`, storeData, config)
+            .post(`http://66.29.142.198:5000/api/user/withdrawal/confirm`, storeData, config)
             .then(data => {
                 event.target.reset();
                 toast.success(`${data.data.message}`, {
@@ -137,7 +137,7 @@ const Withdraw = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/api/user/withdrawal/view/${authUser?._id}`, {
+        fetch(`http://66.29.142.198:5000/api/user/withdrawal/view/${authUser?._id}`, {
             method: 'GET',
         })
             .then(res => res.json())

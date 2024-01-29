@@ -2735,13 +2735,14 @@ figure:hover::before .product-item {
   }
 }
 
-.user-transaction-history-titile{
+.user-transaction-history-titile {
   padding: 20px 30px 0 30px;
   display: flex;
   align-items: center;
   border: 1px solid #e2e5e7;
 }
-.user-transaction-history-titile h3{
+
+.user-transaction-history-titile h3 {
   margin-right: 30px;
   font-size: 20px;
   color: var(--text-secondary);
@@ -2749,17 +2750,18 @@ figure:hover::before .product-item {
   padding: 0 10px 5px 10px;
   margin-bottom: 0px;
 }
-.user-transaction-history-titile .active{
+
+.user-transaction-history-titile .active {
   color: var(--text-primary);
   border-bottom: 3px solid blue;
 }
 
 
 
-.thradeSettingDataRadio input[type="radio"]{
+.thradeSettingDataRadio input[type="radio"] {
   display: none;
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
 }
 
 .thradeSettingDataRadio label {
@@ -2772,25 +2774,37 @@ figure:hover::before .product-item {
   cursor: pointer;
 }
 
-.thradeSettingDataRadio input[type="radio"]:checked + label{
+.thradeSettingDataRadio input[type="radio"]:checked+label {
   color: #35479d;
   background-color: #d3d3d3;
   border: 2px solid #35479d;
 }
 
 .flip-clock {
-  --fcc-flip-duration: 0.5s; /* transition duration when flip card */
-  --fcc-digit-block-width: 40px; /* width of digit card */
-  --fcc-digit-block-height: 60px; /* height of digit card, highly recommend in even number */
-  --fcc-digit-font-size: 30px; /* font size of digit */
-  --fcc-digit-color: white; /* color of digit */
-  --fcc-label-font-size: 10px; /* font size of label */
-  --fcc-label-color: #ffffff; /* color of label */
-  --fcc-background: rgb(167, 57, 57); /* background of digit card */
-  --fcc-divider-color: white; /* color of divider */
-  --fcc-divider-height: 0; /* height of divider */
-  --fcc-separator-size: 6px; /* size of colon */
-  --fcc-separator-color: white; /* color of colon */
+  --fcc-flip-duration: 0.5s;
+  /* transition duration when flip card */
+  --fcc-digit-block-width: 40px;
+  /* width of digit card */
+  --fcc-digit-block-height: 60px;
+  /* height of digit card, highly recommend in even number */
+  --fcc-digit-font-size: 30px;
+  /* font size of digit */
+  --fcc-digit-color: white;
+  /* color of digit */
+  --fcc-label-font-size: 10px;
+  /* font size of label */
+  --fcc-label-color: #ffffff;
+  /* color of label */
+  --fcc-background: rgb(167, 57, 57);
+  /* background of digit card */
+  --fcc-divider-color: white;
+  /* color of divider */
+  --fcc-divider-height: 0;
+  /* height of divider */
+  --fcc-separator-size: 6px;
+  /* size of colon */
+  --fcc-separator-color: white;
+  /* color of colon */
 }
 
 /* 
@@ -2811,3 +2825,53 @@ figure:hover::before .product-item {
   width: 80%;
   height: 100%;
 } */
+
+.testimonial-area {
+  text-align: center;
+}
+
+.testimonial-title h4 {
+  color: var(--text-primary);
+  padding: 10px 0;
+}
+
+.testimonial .row {
+  --bs-gutter-x: 0;
+}
+
+.testimonial img {
+  width: 90%;
+}
+
+.testimonial-rating svg {
+  color: rgb(255, 221, 57);
+  font-size: 16px;
+  margin-right: 5px;
+  padding: 10px 0;
+}
+
+.testimonial-dis p {
+  font-size: 22px;
+  line-height: 1.4;
+  color: var(--text-primary);
+  font-weight: 500;
+  padding: 0 10px;
+}
+
+.testimonial-author a {
+  color: var(--text-primary);
+  font-size: 15px;
+  font-weight: 600;
+  display: block;
+}
+.testimonial-author a:hover {  
+  text-decoration: underline !important;
+}
+
+.testimonial-author small {
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  display: block;
+  padding: 5px 0;
+}

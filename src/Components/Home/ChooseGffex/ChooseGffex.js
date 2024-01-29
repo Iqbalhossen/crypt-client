@@ -8,7 +8,7 @@ const ChooseGffex = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/api/frontend/home/choose/gffex/view`, {
+        fetch(`http://66.29.142.198:5000/api/frontend/home/choose/gffex/view`, {
             method: 'GET',
         })
             .then(res => res.json())
@@ -34,7 +34,7 @@ const ChooseGffex = () => {
                                 </div>
                             </div> */}
                             <div class="ChooseGffex-video">
-                            <video src={`http://localhost:5000/${data?.videos}`} autoPlay loop muted />
+                            <video src={`http://66.29.142.198:5000/${data?.videos}`} autoPlay loop muted />
                                 {/* <video src='https://learn.mocortech.com/learnvideo/Frontpage-Video-EN.mp4' autoPlay loop muted /> */}
                                 <div class="ChooseGffex-video-btn-area">
                                     <div class="ChooseGffex-video-btn">

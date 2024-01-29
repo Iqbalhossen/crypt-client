@@ -6,7 +6,7 @@ const DiscoverProducts = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/api/frontend/home/our/products/view`, {
+        fetch(`http://66.29.142.198:5000/api/frontend/home/our/products/view`, {
             method: 'GET',
         })
             .then(res => res.json())
@@ -18,7 +18,7 @@ const DiscoverProducts = () => {
     const [Title, setTitle] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/api/frontend/home/our/products/title/view`, {
+        fetch(`http://66.29.142.198:5000/api/frontend/home/our/products/title/view`, {
             method: 'GET',
         })
             .then(res => res.json())

@@ -16,7 +16,7 @@ const NewListing = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/api/frontend/home/new/listing/view`, {
+        fetch(`http://66.29.142.198:5000/api/frontend/home/new/listing/view`, {
             method: 'GET',
         })
             .then(res => res.json())

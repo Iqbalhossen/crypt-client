@@ -6,7 +6,7 @@ const JoinCommunity = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/api/frontend/home/community/view`, {
+        fetch(`http://66.29.142.198:5000/api/frontend/home/community/view`, {
             method: 'GET',
         })
             .then(res => res.json())
@@ -19,7 +19,7 @@ const JoinCommunity = () => {
     const [dataBtn, setDataBtn] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/api/frontend/home/community/btn/view`, {
+        fetch(`http://66.29.142.198:5000/api/frontend/home/community/btn/view`, {
             method: 'GET',
         })
             .then(res => res.json())
@@ -39,7 +39,7 @@ const JoinCommunity = () => {
                 <div className="join-community-area-bg">
                     <div className="join-community-area-bg-content">
                         <div className="join-community-area-mask">
-                            <img src={`http://localhost:5000/${data?.image}`} alt="" />
+                            <img src={`http://66.29.142.198:5000/${data?.image}`} alt="" />
                         </div>
                     </div>
                 </div>
@@ -62,7 +62,7 @@ const JoinCommunity = () => {
                     <div className="join-community-social">
                         {dataBtn.map((data, index) =>
                             <Link to={data?.btn_url}>
-                                <img src={`http://localhost:5000/${data?.btn_image}`}  alt="" />
+                                <img src={`http://66.29.142.198:5000/${data?.btn_image}`}  alt="" />
                             </Link>
                         )}                    
                     </div>
