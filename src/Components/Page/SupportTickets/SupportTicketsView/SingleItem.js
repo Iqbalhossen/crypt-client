@@ -73,7 +73,7 @@ const SingleItem = ({data}) => {
         <>
 
             <div class="col-sm-12 pb-3">
-                <div class="card shadow py-2">
+                <div class="card shadow py-2 border-primary border border-2">
                     <div class="card-body">
                         <h5 class="card-title">{AdminData?.name}
                         <br />

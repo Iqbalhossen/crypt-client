@@ -6,6 +6,7 @@ import { AuthContext } from '../../../../../Contexts/AuthContext/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import FlipClockCountdown from "@leenguyen/react-flip-clock-countdown";
 import "@leenguyen/react-flip-clock-countdown/dist/index.css";
+import Completed from './Completed';
 const PracticeTradeNow = () => {
     const { id, name } = useParams();
     // var ws = null;
@@ -100,27 +101,8 @@ const PracticeTradeNow = () => {
             axios
                 .post(`http://localhost:5000/api/user/Practice/trade/log/store`, userData, config)
                 .then(data => {
-                    toast.success(`${data.data.message}`, {
-                        position: "top-right",
-                        autoClose: 5000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        theme: "colored",
-                    });
-                   
-                    setResults(data.data.data);
-                    setTradeTime(data.data.data.OutTime)
-                    console.log(data.data.data.OutTime)
-                    tradeTimeRef.current.classList.remove("d-none");
-                    refSubmitDisLow.current.removeAttribute("disabled");
-                    refSubmitDisHigh.current.removeAttribute("disabled");
-                })
-                .catch(error => {
-                    if (error?.response?.data?.success === false) {
-                        toast.error(`${error?.response?.data?.message}`, {
+                    if(data.data.success === true){
+                        toast.success(`${data.data.message}`, {
                             position: "top-right",
                             autoClose: 5000,
                             hideProgressBar: false,
@@ -130,10 +112,30 @@ const PracticeTradeNow = () => {
                             progress: undefined,
                             theme: "colored",
                         });
+                       
+                        setResults(data.data.data);
+                        setTradeTime(data.data.data.OutTime)
+                        tradeTimeRef.current.classList.remove("d-none");
+                        refSubmitDisLow.current.removeAttribute("disabled");
+                        refSubmitDisHigh.current.removeAttribute("disabled");
+                    }else{
+                        toast.error(`${data.data.message}`, {
+                            position: "top-right",
+                            autoClose: 5000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                            theme: "colored",
+                        });
+                       
                         refSubmitDisLow.current.removeAttribute("disabled");
                         refSubmitDisHigh.current.removeAttribute("disabled");
                     }
+                   
                 })
+                .catch(error => {})
         } else {
             toast.error(`Something is wrong try again`, {
                 position: "top-right",
@@ -149,15 +151,7 @@ const PracticeTradeNow = () => {
 
 
     }
-    const TO = "2024-01-22T02:50:00.635Z";
-    class Completed extends Component {
-        render() {
-          return <FlipClockCountdown to={tradeTime} className="flip-clock" >
-          </FlipClockCountdown> 
-        }
-      }
-
-    
+   
     return (
         <>
 
@@ -177,9 +171,14 @@ const PracticeTradeNow = () => {
                 <div className="container-custom">
 
                     <div style={{ borderRadius: 2, background: "#000", marginTop: 12, }} className='d-none' ref={tradeTimeRef}>
-                        {/* <FlipClockCountdown to={TO} className="flip-clock" >
-                        </FlipClockCountdown> */}
-                        <Completed />
+                        <FlipClockCountdown 
+                        to={tradeTime}
+                         className="flip-clock" 
+                         renderMap={[false, true, true, true]}
+                         labels={[ 'HOURS', 'MINUTES', 'SECONDS']} >
+                        <Completed data={results} />
+                        </FlipClockCountdown >
+                       
                     </div>
 
 

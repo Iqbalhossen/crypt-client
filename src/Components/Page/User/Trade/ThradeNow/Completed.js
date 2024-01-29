@@ -7,12 +7,13 @@ const Completed = ({ data }) => {
     const [results, setResults] = useState([])
     useEffect(() => {
         if (data?._id) {
-            fetch(`http://localhost:5000/api/user/Practice/trade/log/single/view/${data?._id}`, {
+            fetch(`http://localhost:5000/api/user/trade/log/single/view/${data?._id}`, {
                 method: 'GET',
             })
                 .then(res => res.json())
                 .then(data => {
                     setResults(data?.data);
+                    console.log(data)
                 });
 
         }
@@ -34,7 +35,7 @@ const Completed = ({ data }) => {
                                 {results?.Result === "Draw" ? `$${results?.Result_Amount}` : ''}  {results?.Result}
                                
                             </h4>
-                            <p>Message: Practice Trade</p>
+                            <p>Message: Trade</p>
                             <p>Selected Period: {results?.Time}s</p>
                             <p>Price: {results?.Crypto_price}</p>
                             <p>Direction: {results?.HighLow}</p>

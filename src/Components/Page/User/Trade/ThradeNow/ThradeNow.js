@@ -6,9 +6,11 @@ import { AuthContext } from '../../../../../Contexts/AuthContext/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import FlipClockCountdown from "@leenguyen/react-flip-clock-countdown";
 import "@leenguyen/react-flip-clock-countdown/dist/index.css";
+import { Alert } from 'react-bootstrap';
+import Completed from './Completed';
 const ThradeNow = () => {
     const { id, name } = useParams();
-    // var ws = null;
+    var ws = null;
     const [data, setData] = useState()
     const { LoginWithEmail, authUser, setLoading } = useContext(AuthContext);
 
@@ -56,6 +58,10 @@ const ThradeNow = () => {
         ws_coinbase.onclose = (e) => {
             // console.log(e);
         };
+
+        ws_coinbase.onerror = (error) => {
+            console.error("WebSocket Error", error);
+        };
     }
 
     start();
@@ -63,6 +69,7 @@ const ThradeNow = () => {
     const [dataValue, setDataValue] = useState({});
     const [thradeSettingData, setthradeSettingData] = useState([]);
 
+    const [results, setResults] = useState([])
 
     useEffect(() => {
         fetch(`http://localhost:5000/api/admin/trade/setting/view`, {
@@ -85,6 +92,8 @@ const ThradeNow = () => {
 
     const refSubmitDisLow = useRef();
     const refSubmitDisHigh = useRef();
+    const tradeTimeRef = useRef(null);
+    const [tradeTime, setTradeTime] = useState(null)
 
     const handleSubmitData = (HighLow) => {
         if (data) {
@@ -100,22 +109,24 @@ const ThradeNow = () => {
             axios
                 .post(`http://localhost:5000/api/user/trade/log/store`, userData, config)
                 .then(data => {
-                    toast.success(`${data.data.message}`, {
-                        position: "top-right",
-                        autoClose: 5000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        theme: "colored",
-                    });
-                    refSubmitDisLow.current.removeAttribute("disabled");
-                    refSubmitDisHigh.current.removeAttribute("disabled");
-                })
-                .catch(error => {
-                    if (error?.response?.data?.success === false) {
-                        toast.error(`${error?.response?.data?.message}`, {
+                    if(data?.data?.success === true){
+                        toast.success(`${data.data.message}`, {
+                            position: "top-right",
+                            autoClose: 5000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                            theme: "colored",
+                        });
+                        setResults(data.data.data)
+                        setTradeTime(data.data.data.OutTime)
+                        tradeTimeRef.current.classList.remove("d-none");
+                        refSubmitDisLow.current.removeAttribute("disabled");
+                        refSubmitDisHigh.current.removeAttribute("disabled");
+                    }else{
+                        toast.error(`${data.data.message}`, {
                             position: "top-right",
                             autoClose: 5000,
                             hideProgressBar: false,
@@ -128,7 +139,9 @@ const ThradeNow = () => {
                         refSubmitDisLow.current.removeAttribute("disabled");
                         refSubmitDisHigh.current.removeAttribute("disabled");
                     }
+                   
                 })
+                .catch(error => {})
         } else {
             toast.error(`Something is wrong try again`, {
                 position: "top-right",
@@ -144,8 +157,6 @@ const ThradeNow = () => {
 
 
     }
-
-    const TO = "2024-01-22T11:54:00.635Z";
     return (
         <>
 
@@ -164,11 +175,17 @@ const ThradeNow = () => {
             <section className='user-deposit'>
                 <div className="container-custom">
 
-                    <div style={{ borderRadius: 2, background: "#000", marginTop: 12 }}>
-                        <FlipClockCountdown to={TO} className="flip-clock" >
-
-                        </FlipClockCountdown>
+                <div style={{ borderRadius: 2, background: "#000", marginTop: 12, }} className='d-none' ref={tradeTimeRef}>
+                        <FlipClockCountdown 
+                        to={tradeTime}
+                         className="flip-clock" 
+                         renderMap={[false, true, true, true]}
+                         labels={[ 'HOURS', 'MINUTES', 'SECONDS']} >
+                        <Completed data={results} />
+                        </FlipClockCountdown >
+                       
                     </div>
+
                     <div className="py-4">
                         <div className="user-deposit-title">
                             <h1>Trade Now</h1>
