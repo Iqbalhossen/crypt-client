@@ -8,14 +8,18 @@ import FlipClockCountdown from "@leenguyen/react-flip-clock-countdown";
 import "@leenguyen/react-flip-clock-countdown/dist/index.css";
 import { Alert } from 'react-bootstrap';
 import Completed from './Completed';
+import TradeChart from './TradeChart';
+
+
+
 const ThradeNow = () => {
     const { id, name } = useParams();
     var ws = null;
     const [data, setData] = useState()
+    const [dataSet, setDataSet] = useState({})
     const { LoginWithEmail, authUser, setLoading } = useContext(AuthContext);
-
     const [cryptoData, setCryptoData] = useState([]);
-
+  
     useEffect(() => {
         fetch(`http://66.29.142.198:5000/api/admin/crypto/currency/single/view/${id}`, {
             method: 'GET',
@@ -52,6 +56,7 @@ const ThradeNow = () => {
             if (current_price_coinbase.type === 'ticker') {
                 let price_coinbase = parseFloat(current_price_coinbase?.price).toFixed(2);
                 setData(price_coinbase);
+                setDataSet(current_price_coinbase);
             }
         };
 
@@ -65,7 +70,6 @@ const ThradeNow = () => {
     }
 
     start();
-
     const [dataValue, setDataValue] = useState({});
     const [thradeSettingData, setthradeSettingData] = useState([]);
 
@@ -157,6 +161,9 @@ const ThradeNow = () => {
 
 
     }
+
+
+
     return (
         <>
 
@@ -175,7 +182,7 @@ const ThradeNow = () => {
             <section className='user-deposit'>
                 <div className="container-custom">
 
-                <div style={{ borderRadius: 2, background: "#000", marginTop: 12, }} className='d-none' ref={tradeTimeRef}>
+                <div style={{ borderRadius: 2, background: "#000", }} className='d-none' ref={tradeTimeRef}>
                         <FlipClockCountdown 
                         to={tradeTime}
                          className="flip-clock" 
@@ -234,6 +241,13 @@ const ThradeNow = () => {
                                                 {/* </form> */}
 
 
+
+                                            </div>
+                                        </div>
+                                        <div className="col-5">
+                                            <div className="w-100">
+
+                                            <TradeChart dataSet={dataSet}></TradeChart>
 
                                             </div>
                                         </div>

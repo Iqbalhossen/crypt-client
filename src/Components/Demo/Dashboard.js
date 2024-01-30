@@ -19,9 +19,9 @@ function Dashboard({ price, data }) {
     <div className="dashboard">
       <h2>{`$${price}`}</h2>
 
-      {/* <div className="chart-container">
+      <div className="chart-container">
         <Line data={data} options={opts} />
-      </div> */}
+      </div>
     </div>
   );
 }

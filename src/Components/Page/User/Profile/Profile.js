@@ -6,15 +6,15 @@ import { AuthContext } from '../../../../Contexts/AuthContext/AuthProvider';
 const Profile = () => {
     const { LoginWithEmail, authUser, setLoading } = useContext(AuthContext);
 
-    const [DepositData, settDepositData] = useState([]);
+    const [userData, setUserData] = useState([]);
 
     useEffect(() => {
-        fetch(`http://66.29.142.198:5000/api/user/deposit/available/balance/${authUser?._id}`, {
+        fetch(`http://66.29.142.198:5000/api/admin/user/view/single/${authUser?._id}`, {
             method: 'GET',
         })
             .then(res => res.json())
             .then(data => {
-                settDepositData(data);
+                setUserData(data.data);
             });
 
 
@@ -47,7 +47,7 @@ const Profile = () => {
                             <div className="user-details w-100">
                                 <div className="user-name-area">
                                     <div className="d-flex align-items-center">
-                                        <h4>Md. Iqbal Hossen</h4>
+                                        <h4>{authUser?.name}</h4>
                                         <Link className='user-name-edit'><FontAwesomeIcon icon="fa-solid fa-pencil" /></Link>
                                         <Link className='user-profile-vip'>
                                             <FontAwesomeIcon icon="fa-regular fa-gem" />
@@ -59,12 +59,12 @@ const Profile = () => {
                                     <div className='col-6'>
                                         <div className="user-account-details">
                                             <p>Account</p>
-                                            <span>miller5547l@gmail.com</span>
+                                            <span>{userData?.email}</span>
                                         </div>
-                                        <div className="user-account-details">
+                                        {/* <div className="user-account-details">
                                             <p>UID</p>
                                             <span>27238206</span>
-                                        </div>
+                                        </div> */}
                                     </div>
                                     <div className='col-6'>
                                         <div className="user-account-login">
@@ -112,8 +112,8 @@ const Profile = () => {
                                 <div className="d-flex justify-content-between align-items-center">
                                     <div className="user-total-value">
                                         <h3>Total Value</h3>
-                                        <h4 className='user-usdt-value'>{DepositData?.Balance ? DepositData?.Balance : 0} USDT</h4>
-                                        <button type="button" className="btn btn-primary px-5 fw-normal d-block mt-3">Deposit</button>
+                                        <h4 className='user-usdt-value'>{userData?.balance} USDT</h4>
+                                        <Link to='/assets/deposit' className="btn btn-primary px-5 fw-normal d-block mt-3">Deposit</Link>
                                     </div>
                                     <div className="user-assets">
                                     <Link className='user-institutional-verification-btn fw-bolder'>Asset Details</Link>
@@ -123,7 +123,7 @@ const Profile = () => {
                             </div>
                         </div>
                         <div className="col-5">
-                            <Link className='user-box-btn mb-5'>
+                            {/* <Link className='user-box-btn mb-5'>
                                 <div className="d-flex justify-content-between align-items-center">
                                     <span> <img src="https://www.mexc.com/static/images/user/overview/invite.png" alt="" /> Referral</span>
                                     <FontAwesomeIcon icon="fa-solid fa-chevron-right" />
@@ -133,7 +133,7 @@ const Profile = () => {
                                     <span>https://www...Code=1yi93 </span>
                                     <img src="https://www.mexc.com/static/images/user/overview/copy.png" alt="" />
                                 </div>
-                            </Link>
+                            </Link> */}
                             <Link className='user-box-btn'>
                                 <div className="d-flex justify-content-between align-items-center">
                                     <span> <img src="https://www.mexc.com/static/images/user/overview/learn.png" alt="" /> Learn</span>

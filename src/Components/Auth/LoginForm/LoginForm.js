@@ -27,7 +27,7 @@ const LoginForm = () => {
                 'content-type': 'application/json',
             },
             body: JSON.stringify(user)
-        }) 
+        })  
             .then(res => res.json())
             .then(data => {
                 if (data.success === false) {
@@ -36,12 +36,13 @@ const LoginForm = () => {
                 } else {
                     setUserData(data)
                     const user = data;
+                    console.log(user)
                     localStorage.setItem("ID", JSON.stringify(user.data));
                     const expires = new Date(Date.now() + 30*6000*1000).toUTCString();
                     document.cookie = `gffex_token=OiJpcWJhbDExMSIsInVzZXJfaWQiOiI2M2VhNmE3MmJ1c2VyX25hbWMzODM5NX0VzZXJfaWQiOiI2M2InVzZXJfaWQiOiI2M2VhNmE3MmU4N2U5ZWJkNGM; expires=${expires};`;
                     event.target.reset();
                     if (user.data) {
-                        // LoginWithEmail(user.data);
+                        LoginWithEmail(user.data);
                         navigate(userFrom, { replace: true });
                     }
                 }

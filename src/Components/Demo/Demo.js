@@ -99,8 +99,6 @@ const Demo = () => {
 
     setpair(e.target.value);
   };
-
-  console.log('not okk')
     return (
       <div className="container">
         {

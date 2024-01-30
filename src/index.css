@@ -2805,6 +2805,8 @@ figure:hover::before .product-item {
   /* size of colon */
   --fcc-separator-color: white;
   /* color of colon */
+  justify-content: center !important;
+  padding: 5px 0;
 }
 
 /* 
@@ -2833,6 +2835,8 @@ figure:hover::before .product-item {
 .testimonial-title h4 {
   color: var(--text-primary);
   padding: 10px 0;
+  font-size: 36px;
+  line-height: 50px;
 }
 
 .testimonial .row {

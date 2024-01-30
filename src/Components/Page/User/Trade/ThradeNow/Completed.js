@@ -5,6 +5,10 @@ const Completed = ({ data }) => {
     const handleClose = () => setShow(false);
     const [show, setShow] = useState(true);
     const [results, setResults] = useState([])
+    const CloseModal = ()=>{
+        setResults([]);
+        setShow(false);
+    }
     useEffect(() => {
         if (data?._id) {
             fetch(`http://66.29.142.198:5000/api/user/trade/log/single/view/${data?._id}`, {
@@ -19,8 +23,7 @@ const Completed = ({ data }) => {
         }
 
     }, [])
-    const newdata = new Date();
-    if (results?.Result !== null && results?.Result !== undefined && new Date(results?.OutTime).toLocaleString() < new Date(newdata.getTime() + 1000 * 60).toLocaleString()) {
+    if (results?.Result !== null && results?.Result !== undefined) {
         return (
             <>
                 <Modal show={show} onHide={handleClose} >
@@ -39,16 +42,14 @@ const Completed = ({ data }) => {
                             <p>Selected Period: {results?.Time}s</p>
                             <p>Price: {results?.Crypto_price}</p>
                             <p>Direction: {results?.HighLow}</p>
-                            <p>Amount: {results?.Amount}</p>
+                            <p>Amount: ${results?.Amount}</p>
+                            <Button variant="secondary" onClick={CloseModal} className='mt-5'>
+                            Close
+                        </Button>
                         </div>
 
                     </Modal.Body>
-                    <Modal.Footer>
-                        <Button variant="secondary" onClick={handleClose}>
-                            Close
-                        </Button>
-
-                    </Modal.Footer>
+                
                 </Modal>
             </>
         );
