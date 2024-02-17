@@ -10,7 +10,7 @@ const ProfileUpdate = () => {
     const [userData, setUserData] = useState([]);
 
     useEffect(() => {
-        fetch(`https://demeserver.gffex.xyz/api/admin/user/view/single/${authUser?._id}`, {
+        fetch(`http://localhost:5000/api/admin/user/view/single/${authUser?._id}`, {
             method: 'GET',
         })
             .then(res => res.json())
@@ -58,7 +58,7 @@ const ProfileUpdate = () => {
         };
         if (userData?._id) {
             axios
-                .put(`https://demeserver.gffex.xyz/api/user/auth/profile/update/${userData?._id}`, storeData, config)
+                .put(`http://localhost:5000/api/user/auth/profile/update/${userData?._id}`, storeData, config)
                 .then(data => {
                     event.target.reset();
                     toast.success(`${data.data.message}`, {

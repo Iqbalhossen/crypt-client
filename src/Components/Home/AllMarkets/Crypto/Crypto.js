@@ -10,7 +10,7 @@ const Crypto = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetch(`https://demeserver.gffex.xyz/api/admin/crypto/currency/view`, {
+        fetch(`http://localhost:5000/api/admin/crypto/currency/view`, {
             method: 'GET',
         })
             .then(res => res.json())

@@ -21,7 +21,7 @@ const SingleHome = ({ data }) => {
     const [singleData, setSingleData] = useState([]);
 
     useEffect(() => {
-        fetch(`https://demeserver.gffex.xyz/api/frontend/page/menu/single/item/view/${data.name}/${data.menu_id}`, {
+        fetch(`http://localhost:5000/api/frontend/page/menu/single/item/view/${data.name}/${data.menu_id}`, {
             method: 'GET',
         })
             .then(res => res.json())

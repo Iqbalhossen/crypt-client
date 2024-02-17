@@ -13,7 +13,7 @@ const Completed = ({ data }) => {
 
     useEffect(() => {
         if (data?._id) {
-            fetch(`https://demeserver.gffex.xyz/api/user/Practice/trade/log/single/view/${data?._id}`, {
+            fetch(`http://localhost:5000/api/user/Practice/trade/log/single/view/${data?._id}`, {
                 method: 'GET',
             })
                 .then(res => res.json())

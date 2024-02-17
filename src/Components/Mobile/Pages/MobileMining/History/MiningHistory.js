@@ -10,7 +10,7 @@ const MiningHistory = () => {
 
     useEffect(() => {
         if (authUser?._id) {
-            fetch(`https://demeserver.gffex.xyz/api/user/mining/history/view/${authUser?._id}`, {
+            fetch(`http://localhost:5000/api/user/mining/history/view/${authUser?._id}`, {
                 method: 'GET',
             })
                 .then(res => res.json())

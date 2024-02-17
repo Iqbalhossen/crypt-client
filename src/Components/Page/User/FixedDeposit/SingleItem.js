@@ -11,7 +11,7 @@ const SingleItem = ({ data }) => {
                         <div className="item-box  m-auto">
                             <Link to={`/user/fixed/deposit/${data?._id}`} className="product-item" >
                                 <figure>
-                                    <img src={`https://demeserver.gffex.xyz/${data?.image}`} className="img-fluid" alt='' />
+                                    <img src={`http://localhost:5000/${data?.image}`} className="img-fluid" alt='' />
                                 </figure>
                                 <h3 className="product-title">{data?.promotion_name}</h3>
                                 <p className="btn btn-primary expired_time-css">

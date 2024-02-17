@@ -8,7 +8,7 @@ const MobileFixedDepositPage = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetch(`https://demeserver.gffex.xyz/api/user/fixed/deposit/view`, {
+        fetch(`http://localhost:5000/api/user/fixed/deposit/view`, {
             method: 'GET',
         })
             .then(res => res.json())

@@ -5,7 +5,7 @@ const SingleItem = ({data}) => {
     const [AdminData, setAdminData] = useState([]);
     useEffect(() => {
         if(data?.admin_id){
-            fetch(`https://demeserver.gffex.xyz/api/admin/role/view/${data?.admin_id}`, {
+            fetch(`http://localhost:5000/api/admin/role/view/${data?.admin_id}`, {
             method: 'GET',
         })
             .then(res => res.json())
@@ -20,7 +20,7 @@ const SingleItem = ({data}) => {
     const [ticket, setTicketData] = useState([]);
 
     useEffect(() => {
-        fetch(`https://demeserver.gffex.xyz/api/user/support/tickets/view/by/id/${data?.support_ticket_id}`, {
+        fetch(`http://localhost:5000/api/user/support/tickets/view/by/id/${data?.support_ticket_id}`, {
             method: 'GET',
         })
             .then(res => res.json())
@@ -33,7 +33,7 @@ const SingleItem = ({data}) => {
     const [ticketFile, setTicketFileData] = useState([]);
 
     useEffect(() => {
-        fetch(`https://demeserver.gffex.xyz/api/user/support/tickets/file/view/${data?._id}`, {
+        fetch(`http://localhost:5000/api/user/support/tickets/file/view/${data?._id}`, {
             method: 'GET',
         })
             .then(res => res.json())
@@ -57,7 +57,7 @@ const SingleItem = ({data}) => {
                         <p class="card-text">
                             {ticketFile?.attachment !== undefined ?
                             <>
-                            File : <small><Link to={`https://demeserver.gffex.xyz/${ticketFile?.attachment}`} target='_blank'> Attachment </Link></small>
+                            File : <small><Link to={`http://localhost:5000/${ticketFile?.attachment}`} target='_blank'> Attachment </Link></small>
                             </>
                              : '' }
                             </p>
@@ -87,7 +87,7 @@ const SingleItem = ({data}) => {
                         <p class="card-text">
                             {ticketFile?.attachment !== undefined ?
                             <>
-                            File : <small><Link to={`https://demeserver.gffex.xyz/${ticketFile?.attachment}`} target='_blank'> Attachment </Link></small>
+                            File : <small><Link to={`http://localhost:5000/${ticketFile?.attachment}`} target='_blank'> Attachment </Link></small>
                             </>
                              : '' }
                             </p>

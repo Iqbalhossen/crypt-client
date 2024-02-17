@@ -9,7 +9,7 @@ const MobileFixedDepositHistory = () => {
 
     useEffect(() => {
         if (authUser?._id) {
-            fetch(`https://demeserver.gffex.xyz/api/user/fixed/deposit/store/view/${authUser?._id}`, {
+            fetch(`http://localhost:5000/api/user/fixed/deposit/store/view/${authUser?._id}`, {
                 method: 'GET',
             })
                 .then(res => res.json())

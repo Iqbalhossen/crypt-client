@@ -14,7 +14,7 @@ const FixedDeposit = () => {
     const refSubmitDis = useRef();
 
     useEffect(() => {
-        fetch(`https://demeserver.gffex.xyz/api/user/fixed/deposit/view/${id}`, {
+        fetch(`http://localhost:5000/api/user/fixed/deposit/view/${id}`, {
             method: 'GET',
         })
             .then(res => res.json())
@@ -38,7 +38,7 @@ const FixedDeposit = () => {
             };
 
             await axios
-                .post(`https://demeserver.gffex.xyz/api/user/fixed/deposit/store/${id}`, { ...dataValue, user_id: authUser?._id }, config)
+                .post(`http://localhost:5000/api/user/fixed/deposit/store/${id}`, { ...dataValue, user_id: authUser?._id }, config)
                 .then(data => {
                     toast.success(`${data.data.message}`, {
                         position: "top-right",

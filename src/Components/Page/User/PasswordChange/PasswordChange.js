@@ -10,7 +10,7 @@ const PasswordChange = () => {
     const [userData, setUserData] = useState([]);
 
     useEffect(() => {
-        fetch(`https://demeserver.gffex.xyz/api/admin/user/view/single/${authUser?._id}`, {
+        fetch(`http://localhost:5000/api/admin/user/view/single/${authUser?._id}`, {
             method: 'GET',
         })
             .then(res => res.json())
@@ -48,7 +48,7 @@ const PasswordChange = () => {
         };
         if (userData?._id) {
             axios
-                .put(`https://demeserver.gffex.xyz/api/user/auth/password/update/${userData?._id}`, dataValue, config)
+                .put(`http://localhost:5000/api/user/auth/password/update/${userData?._id}`, dataValue, config)
                 .then(data => {
                     event.target.reset();
                     toast.success(`${data.data.message}`, {

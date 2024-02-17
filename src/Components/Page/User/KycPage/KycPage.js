@@ -86,7 +86,7 @@ const KycPage = () => {
             };
 
             axios
-                .post(`https://demeserver.gffex.xyz/api/kyc/verify/store`, userData, config)
+                .post(`http://localhost:5000/api/kyc/verify/store`, userData, config)
                 .then(data => {
                     event.target.reset();
                     setResults(data)
@@ -112,7 +112,7 @@ const KycPage = () => {
     const [data, setData] = useState({});
 
     useEffect(() => {
-        fetch(`https://demeserver.gffex.xyz/api/kyc/verify/view/${authUser?._id}`, {
+        fetch(`http://localhost:5000/api/kyc/verify/view/${authUser?._id}`, {
             method: 'GET',
         })
             .then(res => res.json())
@@ -161,11 +161,11 @@ const KycPage = () => {
 
                                                 <div className="mb-3">
                                                     <label htmlFor="front_page_img" className="form-label">Front page </label> <br />
-                                                    <img src={`https://demeserver.gffex.xyz/${data?.front_img}`} alt='' className='pt-2' />
+                                                    <img src={`http://localhost:5000/${data?.front_img}`} alt='' className='pt-2' />
                                                 </div>
                                                 <div className="mb-3">
                                                     <label htmlFor="back_img" className="form-label">Back page </label> <br />
-                                                    <img src={`https://demeserver.gffex.xyz/${data?.back_img}`} alt='' className='pt-2' />
+                                                    <img src={`http://localhost:5000/${data?.back_img}`} alt='' className='pt-2' />
                                                 </div>
 
                                                 <div className="mb-3">

@@ -7,7 +7,7 @@ const DynamicPage = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetch(`https://demeserver.gffex.xyz/api/frontend/home/menu/${slug}`, {
+        fetch(`http://localhost:5000/api/frontend/home/menu/${slug}`, {
             method: 'GET',
         })
             .then(res => res.json())

@@ -27,7 +27,7 @@ const Footer = () => {
 
     const [data, setData] = useState([]);
     useEffect(() => {
-        fetch(`https://demeserver.gffex.xyz/api/frontend/home/footer/setting/view`, {
+        fetch(`http://localhost:5000/api/frontend/home/footer/setting/view`, {
             method: 'GET',
         })
             .then((res) => res.json())
@@ -36,7 +36,7 @@ const Footer = () => {
 
     const [Newsletter, setNewsletter] = useState([]);
     useEffect(() => {
-        fetch(`https://demeserver.gffex.xyz/api/frontend/home/newsletter/setting/view`, {
+        fetch(`http://localhost:5000/api/frontend/home/newsletter/setting/view`, {
             method: 'GET',
         })
             .then((res) => res.json())
@@ -67,7 +67,7 @@ const Footer = () => {
             }
         };
         axios
-            .post(`https://demeserver.gffex.xyz/api/user/subscribe/store`, dataValue, config)
+            .post(`http://localhost:5000/api/user/subscribe/store`, dataValue, config)
             .then(data => {
                 toast.success(`${data?.data?.message}`, {
                     position: "top-right",
@@ -111,7 +111,7 @@ const Footer = () => {
 
     const [socialSupportData, setSocialSupportData] = useState([]);
     useEffect(() => {
-        fetch(`https://demeserver.gffex.xyz/api/frontend/home/social/support/view`, {
+        fetch(`http://localhost:5000/api/frontend/home/social/support/view`, {
             method: 'GET',
         })
             .then(res => res.json())
@@ -144,7 +144,7 @@ const Footer = () => {
                                 <Link href="/" className="logo">
                                     {/* <img src={logo} alt='' /> */}
                                     {/* <img src={logo} alt='' /> */}
-                                    <img src={`https://demeserver.gffex.xyz/${data?.logo}`} alt="" />
+                                    <img src={`http://localhost:5000/${data?.logo}`} alt="" />
                                 </Link>
                                 <p> {data?.dis}</p>
                                 <ul className="post__share">

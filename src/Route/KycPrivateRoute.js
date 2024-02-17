@@ -9,7 +9,7 @@ const KycPrivateRoute = ({children}) => {
     const [data, setData] = useState({});
 
     useEffect(() => {
-        fetch(`https://demeserver.gffex.xyz/api/kyc/verify/view/${authUser?._id}`, {
+        fetch(`http://localhost:5000/api/kyc/verify/view/${authUser?._id}`, {
             method: 'GET',
         })
             .then(res => res.json())

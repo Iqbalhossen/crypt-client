@@ -6,7 +6,7 @@ const MenuItem = ({ data }) => {
     const [subMenuData, setSubMenuData] = useState([]);
 
     useEffect(() => {
-        fetch(`https://demeserver.gffex.xyz/api/frontend/home/sub/menu/view/${data?._id}`, {
+        fetch(`http://localhost:5000/api/frontend/home/sub/menu/view/${data?._id}`, {
             method: 'GET',
         })
             .then(res => res.json())

@@ -16,7 +16,7 @@ const ForgetPassword = () => {
     const handleSubmit = event => {
         refSubmitDis.current.setAttribute("disabled", true);
         event.preventDefault();
-        fetch('https://demeserver.gffex.xyz/api/user/auth/passowrd/forget', {
+        fetch('http://localhost:5000/api/user/auth/passowrd/forget', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

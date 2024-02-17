@@ -9,7 +9,7 @@ const SupportTickets = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetch(`https://demeserver.gffex.xyz/api/user/support/tickets/view/${authUser?._id}`, {
+        fetch(`http://localhost:5000/api/user/support/tickets/view/${authUser?._id}`, {
             method: 'GET',
         })
             .then(res => res.json())

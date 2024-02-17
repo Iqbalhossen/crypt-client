@@ -7,7 +7,7 @@ const DiscoverProducts = ({Title}) => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetch(`https://demeserver.gffex.xyz/api/frontend/home/our/products/view`, {
+        fetch(`http://localhost:5000/api/frontend/home/our/products/view`, {
             method: 'GET',
         })
             .then(res => res.json())

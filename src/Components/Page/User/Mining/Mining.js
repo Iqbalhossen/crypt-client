@@ -13,7 +13,7 @@ const Mining = () => {
     const refSubmitDis = useRef();
 
     useEffect(() => {
-        fetch(`https://demeserver.gffex.xyz/api/user/mining/view/${id}`, {
+        fetch(`http://localhost:5000/api/user/mining/view/${id}`, {
             method: 'GET',
         })
             .then(res => res.json())
@@ -38,7 +38,7 @@ const Mining = () => {
             };
 
             await axios
-                .post(`https://demeserver.gffex.xyz/api/user/mining/store/${id}`, { ...dataValue, user_id: authUser?._id }, config)
+                .post(`http://localhost:5000/api/user/mining/store/${id}`, { ...dataValue, user_id: authUser?._id }, config)
                 .then(data => {
                     toast.success(`${data.data.message}`, {
                         position: "top-right",

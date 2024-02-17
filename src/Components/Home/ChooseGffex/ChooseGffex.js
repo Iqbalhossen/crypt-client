@@ -13,7 +13,7 @@ const ChooseGffex = ({data}) => {
                     <div className="container-custom">
                         <div className="ChooseGffex-video-area shadow  rounded border-custom mt-5 p-4">              
                             <div class="ChooseGffex-video">
-                            <video src={`https://demeserver.gffex.xyz/${data?.videos}`} autoPlay loop muted />
+                            <video src={`http://localhost:5000/${data?.videos}`} autoPlay loop muted />
                              
                                 <div class="ChooseGffex-video-btn-area">
                                     <div class="ChooseGffex-video-btn">

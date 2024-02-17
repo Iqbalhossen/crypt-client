@@ -8,7 +8,7 @@ const JoinCommunity = ({data}) => {
     const [dataBtn, setDataBtn] = useState([]);
 
     useEffect(() => {
-        fetch(`https://demeserver.gffex.xyz/api/frontend/home/community/btn/view`, {
+        fetch(`http://localhost:5000/api/frontend/home/community/btn/view`, {
             method: 'GET',
         })
             .then(res => res.json())
@@ -36,7 +36,7 @@ const JoinCommunity = ({data}) => {
                     <div className="join-community-area-bg">
                         <div className="join-community-area-bg-content">
                             <div className="join-community-area-mask">
-                                <img src={`https://demeserver.gffex.xyz/${data?.image}`} alt="" />
+                                <img src={`http://localhost:5000/${data?.image}`} alt="" />
                             </div>
                         </div>
                     </div>
@@ -59,7 +59,7 @@ const JoinCommunity = ({data}) => {
                         <div className="join-community-social">
                             {dataBtn.map((data, index) =>
                                 <Link to={data?.btn_url}>
-                                    <img src={`https://demeserver.gffex.xyz/${data?.btn_image}`}  alt="" />
+                                    <img src={`http://localhost:5000/${data?.btn_image}`}  alt="" />
                                 </Link>
                             )}                    
                         </div>

@@ -21,7 +21,7 @@ const LoginForm = () => {
     const handleRegister = event => {
         refSubmitDis.current.setAttribute("disabled", true);
         event.preventDefault();
-        fetch('https://demeserver.gffex.xyz/api/user/auth/login', {
+        fetch('http://localhost:5000/api/user/auth/login', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

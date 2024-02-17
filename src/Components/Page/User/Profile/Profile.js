@@ -9,7 +9,7 @@ const Profile = () => {
     const [userData, setUserData] = useState([]);
 
     useEffect(() => {
-        fetch(`https://demeserver.gffex.xyz/api/admin/user/view/single/${authUser?._id}`, {
+        fetch(`http://localhost:5000/api/admin/user/view/single/${authUser?._id}`, {
             method: 'GET',
         })
             .then(res => res.json())
@@ -23,7 +23,7 @@ const Profile = () => {
     const [KYCData, setKYCData] = useState({});
 
     useEffect(() => {
-        fetch(`https://demeserver.gffex.xyz/api/kyc/verify/view/${authUser?._id}`, {
+        fetch(`http://localhost:5000/api/kyc/verify/view/${authUser?._id}`, {
             method: 'GET',
         })
             .then(res => res.json())

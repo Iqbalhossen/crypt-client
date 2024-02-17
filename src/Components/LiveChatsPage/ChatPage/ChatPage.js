@@ -3,7 +3,7 @@ import { AuthContext } from '../../../Contexts/AuthContext/AuthProvider';
 import { io } from 'socket.io-client';
 import axios from 'axios';
 import SingleMessageItem from './SingleMessageItem';
-const ENDPOINT = "https://demeserver.gffex.xyz"; // 
+const ENDPOINT = "http://localhost:5000"; // 
 var socket, selectedChatCompare;
 
 const ChatPage = () => {
@@ -28,7 +28,7 @@ const ChatPage = () => {
     });
 
     useEffect(() => {
-        fetch(`https://demeserver.gffex.xyz/api/chat//messgae/view/${authUser?._id}`, {
+        fetch(`http://localhost:5000/api/chat//messgae/view/${authUser?._id}`, {
             method: 'GET',
         })
             .then((res) => res.json())
@@ -63,7 +63,7 @@ const ChatPage = () => {
 
                 }
             };
-            axios.post(`https://demeserver.gffex.xyz/api/chat/messgae/send/${authUser?._id}`, storeData, config)
+            axios.post(`http://localhost:5000/api/chat/messgae/send/${authUser?._id}`, storeData, config)
                 .then(async (data) => {
                     event.target.reset();
                     const NewMessages = data?.data?.data

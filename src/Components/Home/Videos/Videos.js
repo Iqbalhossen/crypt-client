@@ -17,7 +17,7 @@ export default function Videos({ data }) {
         return (
             <>
                 <section className='videos-section desktop-version'>
-                    <video src={`https://demeserver.gffex.xyz/${data?.video_url}`} autoPlay loop muted />
+                    <video src={`http://localhost:5000/${data?.video_url}`} autoPlay loop muted />
                     <div className="video-content-section">
                         <h1>{data?.title_one}<br />{data?.title_two}</h1>
                         <p>

@@ -38,7 +38,7 @@ const SupportTicketsAdd = () => {
                 }
             };
             axios
-                .post(`https://demeserver.gffex.xyz/api/user/support/tickets/store/${authUser?._id}`, storeData, config)
+                .post(`http://localhost:5000/api/user/support/tickets/store/${authUser?._id}`, storeData, config)
                 .then(data => {
                     event.target.reset();
                     toast.success(`${data.data.message}`, {
@@ -66,7 +66,7 @@ const SupportTicketsAdd = () => {
                 }
             };
             axios
-                .post(`https://demeserver.gffex.xyz/api/user/support/tickets/store/${authUser?._id}`, storeData, config)
+                .post(`http://localhost:5000/api/user/support/tickets/store/${authUser?._id}`, storeData, config)
                 .then(data => {
                     event.target.reset();
                     toast.success(`${data.data.message}`, {

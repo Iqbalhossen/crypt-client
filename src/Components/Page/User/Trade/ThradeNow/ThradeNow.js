@@ -21,7 +21,7 @@ const ThradeNow = () => {
     const [cryptoData, setCryptoData] = useState([]);
   
     useEffect(() => {
-        fetch(`https://demeserver.gffex.xyz/api/admin/crypto/currency/single/view/${id}`, {
+        fetch(`http://localhost:5000/api/admin/crypto/currency/single/view/${id}`, {
             method: 'GET',
         })
             .then(res => res.json())
@@ -76,7 +76,7 @@ const ThradeNow = () => {
     const [results, setResults] = useState([])
 
     useEffect(() => {
-        fetch(`https://demeserver.gffex.xyz/api/admin/trade/setting/view`, {
+        fetch(`http://localhost:5000/api/admin/trade/setting/view`, {
             method: 'GET',
         })
             .then(res => res.json())
@@ -111,7 +111,7 @@ const ThradeNow = () => {
                 }
             };
             axios
-                .post(`https://demeserver.gffex.xyz/api/user/trade/log/store`, userData, config)
+                .post(`http://localhost:5000/api/user/trade/log/store`, userData, config)
                 .then(data => {
                     if(data?.data?.success === true){
                         toast.success(`${data.data.message}`, {

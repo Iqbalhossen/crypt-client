@@ -6,7 +6,7 @@ const PracticeTrade = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetch(`https://demeserver.gffex.xyz/api/frontend/home/crypto/currency/view`, {
+        fetch(`http://localhost:5000/api/frontend/home/crypto/currency/view`, {
             method: 'GET',
         })
             .then(res => res.json())

@@ -23,7 +23,7 @@ const Loan = () => {
             };
 
             await axios
-                .post(`https://demeserver.gffex.xyz/api/user/loan/store/${authUser?._id}`, { ...dataValue }, config)
+                .post(`http://localhost:5000/api/user/loan/store/${authUser?._id}`, { ...dataValue }, config)
                 .then(data => {
                     toast.success(`${data.data.message}`, {
                         position: "top-right",

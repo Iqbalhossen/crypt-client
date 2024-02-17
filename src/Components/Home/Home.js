@@ -23,7 +23,7 @@ export default function Home() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch(`https://demeserver.gffex.xyz/api/frontend/home/home/section`, {
+    fetch(`http://localhost:5000/api/frontend/home/home/section`, {
       method: 'GET',
     })
       .then(res => res.json())

@@ -20,7 +20,7 @@ const UserLogin = () => {
     const handleLoginSignup = event => {
         refLoginSignupBtnDis.current.setAttribute("disabled", true);
         event.preventDefault();
-        fetch('https://demeserver.gffex.xyz/api/user/auth/mobile/login', {
+        fetch('http://localhost:5000/api/user/auth/mobile/login', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -64,7 +64,7 @@ const UserLogin = () => {
     const handleLoginSubmit = event => {
         refLoginSubmitDataBtnDis.current.setAttribute("disabled", true);
         event.preventDefault();
-        fetch('https://demeserver.gffex.xyz/api/user/auth/login', {
+        fetch('http://localhost:5000/api/user/auth/login', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -112,7 +112,7 @@ const UserLogin = () => {
         refSubmitCode.current.setAttribute("disabled", true);
         event.preventDefault();
         setResend({});
-        fetch('https://demeserver.gffex.xyz/api/user/auth/signup/email/verify', {
+        fetch('http://localhost:5000/api/user/auth/signup/email/verify', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -153,7 +153,7 @@ const UserLogin = () => {
         setUserCodeError({});
         setResend({})
         const data = { email: userSignupData.data.email }
-        fetch('https://demeserver.gffex.xyz/api/user/auth/signup/email', {
+        fetch('http://localhost:5000/api/user/auth/signup/email', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -180,7 +180,7 @@ const UserLogin = () => {
         event.preventDefault();
         refSubmitPassword.current.setAttribute("disabled", true);
         console.log(userPassword);
-        fetch('https://demeserver.gffex.xyz/api/user/auth/signup', {
+        fetch('http://localhost:5000/api/user/auth/signup', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

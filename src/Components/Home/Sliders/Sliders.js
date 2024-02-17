@@ -62,7 +62,7 @@ const Sliders = ({data}) => {
                     >
 
                         {data.map((data, index) => <SwiperSlide>
-                            <img src={`https://demeserver.gffex.xyz/${data?.image_url}`} alt="" />
+                            <img src={`http://localhost:5000/${data?.image_url}`} alt="" />
                         </SwiperSlide>)}
                     </Swiper>
 

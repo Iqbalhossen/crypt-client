@@ -7,7 +7,7 @@ const MobileMiningPage = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetch(`https://demeserver.gffex.xyz/api/user/mining/view`, {
+        fetch(`http://localhost:5000/api/user/mining/view`, {
             method: 'GET',
         })
             .then(res => res.json())
