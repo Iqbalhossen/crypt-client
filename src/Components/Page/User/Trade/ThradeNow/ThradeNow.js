@@ -21,7 +21,7 @@ const ThradeNow = () => {
     const [cryptoData, setCryptoData] = useState([]);
   
     useEffect(() => {
-        fetch(`http://66.29.142.198:5000/api/admin/crypto/currency/single/view/${id}`, {
+        fetch(`https://demeserver.gffex.xyz/api/admin/crypto/currency/single/view/${id}`, {
             method: 'GET',
         })
             .then(res => res.json())
@@ -76,7 +76,7 @@ const ThradeNow = () => {
     const [results, setResults] = useState([])
 
     useEffect(() => {
-        fetch(`http://66.29.142.198:5000/api/admin/trade/setting/view`, {
+        fetch(`https://demeserver.gffex.xyz/api/admin/trade/setting/view`, {
             method: 'GET',
         })
             .then(res => res.json())
@@ -111,7 +111,7 @@ const ThradeNow = () => {
                 }
             };
             axios
-                .post(`http://66.29.142.198:5000/api/user/trade/log/store`, userData, config)
+                .post(`https://demeserver.gffex.xyz/api/user/trade/log/store`, userData, config)
                 .then(data => {
                     if(data?.data?.success === true){
                         toast.success(`${data.data.message}`, {
@@ -145,7 +145,20 @@ const ThradeNow = () => {
                     }
                    
                 })
-                .catch(error => {})
+                .catch(error => {
+                    toast.error(`${error?.response?.data?.message}`, {
+                        position: "top-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "colored",
+                    });
+                    refSubmitDisLow.current.removeAttribute("disabled");
+                    refSubmitDisHigh.current.removeAttribute("disabled");
+                })
         } else {
             toast.error(`Something is wrong try again`, {
                 position: "top-right",

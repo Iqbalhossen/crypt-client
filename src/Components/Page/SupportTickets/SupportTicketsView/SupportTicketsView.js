@@ -11,7 +11,7 @@ const SupportTicketsView = () => {
     const [updateData, setUpdateData] = useState([]);
     const [data, setData] = useState([]);
     useEffect(() => {
-        fetch(`http://66.29.142.198:5000/api/user/support/tickets/view/by/id/${id}`, {
+        fetch(`https://demeserver.gffex.xyz/api/user/support/tickets/view/by/id/${id}`, {
             method: 'GET',
         })
             .then(res => res.json())
@@ -24,7 +24,7 @@ const SupportTicketsView = () => {
 
     const [messageData, setMessageData] = useState([]);
     useEffect(() => {
-        fetch(`http://66.29.142.198:5000/api/user/support/tickets/message/view/${id}`, {
+        fetch(`https://demeserver.gffex.xyz/api/user/support/tickets/message/view/${id}`, {
             method: 'GET',
         })
             .then(res => res.json())
@@ -63,7 +63,7 @@ const SupportTicketsView = () => {
                 }
             };
             axios
-                .post(`http://66.29.142.198:5000/api/user/support/tickets/replay/${id}`, storeData, config)
+                .post(`https://demeserver.gffex.xyz/api/user/support/tickets/replay/${id}`, storeData, config)
                 .then(data => {
                     event.target.reset();
                     toast.success(`${data.data.message}`, {
@@ -92,7 +92,7 @@ const SupportTicketsView = () => {
                 }
             };
             axios
-                .post(`http://66.29.142.198:5000/api/user/support/tickets/replay/${id}`, storeData, config)
+                .post(`https://demeserver.gffex.xyz/api/user/support/tickets/replay/${id}`, storeData, config)
                 .then(data => {
                     event.target.reset();
                     toast.success(`${data.data.message}`, {

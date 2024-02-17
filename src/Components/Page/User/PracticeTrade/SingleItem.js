@@ -10,7 +10,7 @@ const SingleItem = ({data}) => {
                         <div className="item-box  m-auto">
                             <Link to={`/user/practice/trade/with/${data?.Name}/${data?._id}`} className="product-item" >
                                 <figure>
-                                    <img src={`http://66.29.142.198:5000/${data?.image}`} className="img-fluid" alt='' />
+                                    <img src={`https://demeserver.gffex.xyz/${data?.image}`} className="img-fluid" alt='' />
                                 </figure>
                                 <h3 className="product-title">{data?.Name}</h3>
                                 <Link to='#' className="btn btn-primary"> Trade Now</Link>

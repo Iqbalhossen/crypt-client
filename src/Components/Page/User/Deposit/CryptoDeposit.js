@@ -8,7 +8,7 @@ const CryptoDeposit = ({aagagag}) => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetch(`http://66.29.142.198:5000/api/user/payment/gateways/manual/view`, {
+        fetch(`https://demeserver.gffex.xyz/api/user/payment/gateways/manual/view`, {
             method: 'GET',
         })
             .then(res => res.json())
@@ -31,7 +31,7 @@ const CryptoDeposit = ({aagagag}) => {
     const [userdata, setuserdata] = useState({});
     const handleForm = event => {
         event.preventDefault();
-        fetch(`http://66.29.142.198:5000/api/user/payment/gateways/manual/view/${dataValue?.GatewayId}`, {
+        fetch(`https://demeserver.gffex.xyz/api/user/payment/gateways/manual/view/${dataValue?.GatewayId}`, {
             method: 'GET',
         })
             .then(res => res.json())
@@ -45,7 +45,7 @@ const CryptoDeposit = ({aagagag}) => {
     }
 
     useEffect(() => {
-        fetch(`http://66.29.142.198:5000/api/user/payment/gateways/manual/view/${dataValue?.GatewayId}`, {
+        fetch(`https://demeserver.gffex.xyz/api/user/payment/gateways/manual/view/${dataValue?.GatewayId}`, {
             method: 'GET',
         })
             .then(res => res.json())
@@ -80,7 +80,7 @@ const CryptoDeposit = ({aagagag}) => {
                 }
             };
             axios
-                .post(`http://66.29.142.198:5000/api/user/payment/gateways/manual/deposit/store`, storeData, config)
+                .post(`https://demeserver.gffex.xyz/api/user/payment/gateways/manual/deposit/store`, storeData, config)
                 .then(data => {
                     event.target.reset();
                     toast.success(`${data.data.message}`, {

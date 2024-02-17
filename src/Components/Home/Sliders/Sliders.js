@@ -8,8 +8,7 @@ import 'swiper/css/pagination';
 // import required modules
 import { Autoplay, Pagination } from 'swiper/modules';
 
-
-const Sliders = () => {
+const Sliders = ({data}) => {
     const pagination = {
         clickable: true,
         renderBullet: function (index, className) {
@@ -17,20 +16,6 @@ const Sliders = () => {
         },
 
     };
-
-    const [data, setData] = useState([]);
-
-    useEffect(() => {
-        fetch(`http://66.29.142.198:5000/api/frontend/home/slider/view`, {
-            method: 'GET',
-        })
-            .then(res => res.json())
-            .then(data => {
-                setData(data.data);
-            });
-
-
-    }, [])
 
 
     return (
@@ -55,53 +40,37 @@ const Sliders = () => {
                                 width: 1024,
                                 slidesPerView: 4,
                             },
+                            1200: {
+                                width: 1024,
+                                slidesPerView: 4,
+                            },
                         }}
                         //   onSlideChange={() => console.log('slide change')}
                         // onSwiper={(swiper) => console.log(swiper)}
                         centeredSlides={true}
-                        autoplay={{
-                            delay: 2500,
-                            disableOnInteraction: false,
-                            pauseOnMouseEnter: true,
-                        }}
+                        // autoplay={{
+                        //     delay: 2500,
+                        //     disableOnInteraction: false,
+                        //     pauseOnMouseEnter: true,
+                        // }}
 
-                        loop={true}
+                        // loop={true}
                         spaceBetween={30}
-                        pagination={pagination}
-                        modules={[Pagination, Autoplay]}
+                        // pagination={pagination}
+                        // modules={[Pagination, Autoplay]}
                         className="mySwiper"
                     >
 
                         {data.map((data, index) => <SwiperSlide>
-                            <img src={`http://66.29.142.198:5000/${data?.image_url}`} alt="" />
+                            <img src={`https://demeserver.gffex.xyz/${data?.image_url}`} alt="" />
                         </SwiperSlide>)}
-
-
-
-                        {/* <SwiperSlide>
-                            <img src="https://www.mexc.com/api/file/download/F202311130012482347ELAmaCqEq4ggl" alt="" />
-                        </SwiperSlide>
-                        <SwiperSlide><img src="https://www.mexc.com/api/file/download/F20231020162459266iIBecVVgQpOQHl" alt="" /></SwiperSlide>
-                        <SwiperSlide>
-                            <img src="https://www.mexc.com/api/file/download/F20231021154639768QBdULDXpG1RyGK" alt="" />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <img src="https://www.mexc.com/api/file/download/F202311130012482347ELAmaCqEq4ggl" alt="" />
-                        </SwiperSlide>
-                        <SwiperSlide><img src="https://www.mexc.com/api/file/download/F20231020162459266iIBecVVgQpOQHl" alt="" /></SwiperSlide>
-                        <SwiperSlide>
-                            <img src="https://www.mexc.com/api/file/download/F20231021154639768QBdULDXpG1RyGK" alt="" />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <img src="https://www.mexc.com/api/file/download/F202311130012482347ELAmaCqEq4ggl" alt="" />
-                        </SwiperSlide>
-                        <SwiperSlide><img src="https://www.mexc.com/api/file/download/F20231020162459266iIBecVVgQpOQHl" alt="" /></SwiperSlide> */}
                     </Swiper>
 
                 </div>
             </div>
         </>
     );
+   
 };
 
 export default Sliders;

@@ -5,7 +5,6 @@ import { useParams } from 'react-router-dom';
 import { AuthContext } from '../../../../../Contexts/AuthContext/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import FlipClockCountdown from "@leenguyen/react-flip-clock-countdown";
-import "@leenguyen/react-flip-clock-countdown/dist/index.css";
 import Completed from './Completed';
 import TradeChart from '../../Trade/ThradeNow/TradeChart';
 const PracticeTradeNow = () => {
@@ -18,7 +17,7 @@ const PracticeTradeNow = () => {
     const [cryptoData, setCryptoData] = useState([]);
 
     useEffect(() => {
-        fetch(`http://66.29.142.198:5000/api/admin/crypto/currency/single/view/${id}`, {
+        fetch(`https://demeserver.gffex.xyz/api/admin/crypto/currency/single/view/${id}`, {
             method: 'GET',
         })
             .then(res => res.json())
@@ -28,6 +27,7 @@ const PracticeTradeNow = () => {
 
 
     }, [])
+
 
 
     function start() {
@@ -66,7 +66,7 @@ const PracticeTradeNow = () => {
 
 
     useEffect(() => {
-        fetch(`http://66.29.142.198:5000/api/admin/trade/setting/view`, {
+        fetch(`https://demeserver.gffex.xyz/api/admin/trade/setting/view`, {
             method: 'GET',
         })
             .then(res => res.json())
@@ -100,7 +100,7 @@ const PracticeTradeNow = () => {
                 }
             };
             axios
-                .post(`http://66.29.142.198:5000/api/user/Practice/trade/log/store`, userData, config)
+                .post(`https://demeserver.gffex.xyz/api/user/Practice/trade/log/store`, userData, config)
                 .then(data => {
                     if (data.data.success === true) {
                         toast.success(`${data.data.message}`, {
@@ -136,7 +136,21 @@ const PracticeTradeNow = () => {
                     }
 
                 })
-                .catch(error => { })
+                .catch(error => {
+                    toast.error(`${error?.response?.data?.message}`, {
+                        position: "top-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "colored",
+                    });
+                    refSubmitDisLow.current.removeAttribute("disabled");
+                    refSubmitDisHigh.current.removeAttribute("disabled");
+
+                })
         } else {
             toast.error(`Something is wrong try again`, {
                 position: "top-right",
@@ -169,7 +183,7 @@ const PracticeTradeNow = () => {
                 theme="colored"
             />
             <section className='user-deposit'>
-                <div style={{ borderRadius: 2, background: "#000",  }} className='d-none' ref={tradeTimeRef}>
+                <div style={{ borderRadius: 2, background: "#000", }} className='d-none' ref={tradeTimeRef}>
                     <FlipClockCountdown
                         to={tradeTime}
                         className="flip-clock"

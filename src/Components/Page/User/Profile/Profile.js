@@ -9,7 +9,7 @@ const Profile = () => {
     const [userData, setUserData] = useState([]);
 
     useEffect(() => {
-        fetch(`http://66.29.142.198:5000/api/admin/user/view/single/${authUser?._id}`, {
+        fetch(`https://demeserver.gffex.xyz/api/admin/user/view/single/${authUser?._id}`, {
             method: 'GET',
         })
             .then(res => res.json())
@@ -18,13 +18,12 @@ const Profile = () => {
             });
 
 
-    }, [])
+    }, [authUser])
 
-    
     const [KYCData, setKYCData] = useState({});
 
     useEffect(() => {
-        fetch(`http://66.29.142.198:5000/api/kyc/verify/view/${authUser?._id}`, {
+        fetch(`https://demeserver.gffex.xyz/api/kyc/verify/view/${authUser?._id}`, {
             method: 'GET',
         })
             .then(res => res.json())
@@ -47,7 +46,7 @@ const Profile = () => {
                             <div className="user-details w-100">
                                 <div className="user-name-area">
                                     <div className="d-flex align-items-center">
-                                        <h4>{authUser?.name}</h4>
+                                        <h4>{authUser?.fname} {authUser?.lname}</h4>
                                         <Link className='user-name-edit'><FontAwesomeIcon icon="fa-solid fa-pencil" /></Link>
                                         <Link className='user-profile-vip'>
                                             <FontAwesomeIcon icon="fa-regular fa-gem" />

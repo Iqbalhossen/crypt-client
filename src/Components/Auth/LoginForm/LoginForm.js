@@ -21,7 +21,7 @@ const LoginForm = () => {
     const handleRegister = event => {
         refSubmitDis.current.setAttribute("disabled", true);
         event.preventDefault();
-        fetch('http://66.29.142.198:5000/api/user/auth/login', {
+        fetch('https://demeserver.gffex.xyz/api/user/auth/login', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -36,7 +36,6 @@ const LoginForm = () => {
                 } else {
                     setUserData(data)
                     const user = data;
-                    console.log(user)
                     localStorage.setItem("ID", JSON.stringify(user.data));
                     const expires = new Date(Date.now() + 30*6000*1000).toUTCString();
                     document.cookie = `gffex_token=OiJpcWJhbDExMSIsInVzZXJfaWQiOiI2M2VhNmE3MmJ1c2VyX25hbWMzODM5NX0VzZXJfaWQiOiI2M2InVzZXJfaWQiOiI2M2VhNmE3MmU4N2U5ZWJkNGM; expires=${expires};`;

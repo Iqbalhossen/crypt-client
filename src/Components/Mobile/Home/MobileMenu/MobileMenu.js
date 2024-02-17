@@ -15,7 +15,7 @@ const MobileMenu = () => {
                             <i class="fa-solid fa-chart-simple"></i>
                             <h6>Markets</h6>
                         </Link>
-                        <Link to=''>
+                        <Link to='/trade'>
                             <i class="fa-solid fa-arrow-right-arrow-left"></i>
                             <h6>Trade</h6>
                         </Link>

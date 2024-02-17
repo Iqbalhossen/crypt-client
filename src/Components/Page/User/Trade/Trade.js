@@ -7,7 +7,7 @@ const Trade = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetch(`http://66.29.142.198:5000/api/admin/crypto/currency/view`, {
+        fetch(`https://demeserver.gffex.xyz/api/frontend/home/crypto/currency/view`, {
             method: 'GET',
         })
             .then(res => res.json())
@@ -17,6 +17,7 @@ const Trade = () => {
 
 
     }, [])
+
 
     return (
         <>

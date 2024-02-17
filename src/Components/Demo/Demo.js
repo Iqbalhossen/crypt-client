@@ -69,8 +69,8 @@ const Demo = () => {
         .then((res) => res.json())
         .then((data) => (dataArr = data));
       
-      let formattedData = formatData(dataArr);
-      setpastData(formattedData);
+      // let formattedData = formatData(dataArr);
+      // setpastData(formattedData);
     };
 
     fetchHistoricalData();
@@ -99,21 +99,33 @@ const Demo = () => {
 
     setpair(e.target.value);
   };
+
+
+  useEffect(() => {
+    fetch('https://api1.binance.com')
+    .then((res) => res.json())
+    .then((data) => (
+      console.log(data)
+    ));
+
+  }, []);
+
     return (
-      <div className="container">
-        {
-          <select name="currency" value={pair} onChange={handleSelect}>
-            {currencies.map((cur, idx) => {
-              return (
-                <option key={idx} value={cur.id}>
-                  {cur.display_name}
-                </option>
-              );
-            })}
-          </select>
-        }
-        <Dashboard price={price} data={pastData} />
-      </div>
+      <></>
+      // <div className="container">
+      //   {
+      //     <select name="currency" value={pair} onChange={handleSelect}>
+      //       {currencies.map((cur, idx) => {
+      //         return (
+      //           <option key={idx} value={cur.id}>
+      //             {cur.display_name} {idx}
+      //           </option>
+      //         );
+      //       })}
+      //     </select>
+      //   }
+      //   <Dashboard price={price} data={pastData} />
+      // </div>
     );
   }
 

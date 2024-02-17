@@ -59,4 +59,7 @@
   --bg-101: #191b2b;
   --fill-menu-selected:#222429;
   --trade-card-bg:#5b6481ba;
+  --skeleton-bg:#363636;
+  --skeleton-base-color:#363636;
+  --skeleton-highlight-color:#414141;
 }

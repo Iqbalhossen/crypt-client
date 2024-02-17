@@ -266,11 +266,13 @@
             border-radius: 5px;
             outline: none;
             color: var(--text-primary);
+            margin-bottom: 10px;
         }
 
         .user-login-mobile input::placeholder {
             font-size: 15px;
             font-weight: 400;
+            color: var(--text-primary);
         }
 
         .user-login-mobile button {
@@ -382,7 +384,7 @@
         }
 
         .active-markets-content-menu {
-            color: #fff !important;
+            /* color: #fff !important; */
             font-weight: 800;
         }
 
@@ -471,7 +473,7 @@
         }
 
         .mobile-user-protfolio {
-            height: 70vh;
+            min-height: 70vh;
         }
 
         .mobile-user-protfolio-menu-item {
@@ -618,30 +620,74 @@
             padding: 20px 0 10px 0;
         }
 
-        .mobile-kyc-webcam button{
+        .mobile-kyc-webcam button {
             padding: 5px 20px;
             margin: 10px;
         }
 
-        .mobile-future-coin-item{
+        .mobile-future-coin-item {
             background-color: red;
             /* padding: 5px 40px; */
             border-radius: 5px;
         }
-        .mobile-future-coin-item > .col-6{
+
+        .mobile-future-coin-item>.col-6 {
             padding: 1px;
         }
-        .mobile-future-coin-item p{
+
+        .mobile-future-coin-item p {
             margin: 0;
             font-size: 15px;
             font-weight: 600;
-            
+
         }
-        .mobile-future-coin-item-active{
+
+        .mobile-future-coin-item-active {
             background-color: blue;
             border-radius: 5px;
         }
 
+
+        .mobile-data-table th,
+        .mobile-data-table td {
+            /* text-align: center; */
+        }
+
+       
+        .table-xs {
+            margin: 0 auto;
+        }
+
+
+
+        .table-xs>div {
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #fff;
+            word-break: break-all;
+        }
+
+
+        .row-header {
+            background-color: #000;
+            color: #fff;
+            overflow: hidden;
+            font-weight: 600;
+
+        }
+
+        .table-xs .header {
+            background-color: #BEF2F5;
+            font-weight: 600;
+
+        }
+        .mobile-data-table{
+            width: 100%;
+            overflow-x: scroll;
+            display: block;
+        }
+        
+     
     }
 
     /* // Small devices (landscape phones, less than 768px) */
@@ -664,4 +710,12 @@
     display: inline-block;
     height: 40px;
     line-height: 40px;
+} */
+
+/* 
+
+@media (min-width: 0px) and (max-width: 1094px) {
+
+
+
 } */

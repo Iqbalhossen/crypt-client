@@ -5,7 +5,7 @@ const SingleItem = ({data}) => {
         <>
              <div className="discover-products-items border-custom rounded-3 mb-3">
                         <div className="discover-products-item-list">
-                            <img src={`http://66.29.142.198:5000/${data?.image_url}`} alt="gffex" />
+                            <img src={`https://demeserver.gffex.xyz/${data?.image_url}`} alt="gffex" />
                             <div className="discover-products-item">
                                 <h3>{data?.title}</h3>
                                 <p>{data?.short_dis}</p>

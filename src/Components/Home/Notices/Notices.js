@@ -8,23 +8,8 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import 'swiper/css';
 import { Link } from 'react-router-dom';
 
-const Notices = () => {
 
-
-    const [data, setData] = useState([]);
-
-    useEffect(() => {
-        fetch(`http://66.29.142.198:5000/api/frontend/home/notices/view`, {
-            method: 'GET',
-        })
-            .then(res => res.json())
-            .then(data => {
-                setData(data?.data);
-            });
-
-
-    }, []);
-    
+const Notices = ({data}) => {
 
     return (
         <>
@@ -36,9 +21,7 @@ const Notices = () => {
                 <div className="notice-silder flex-grow-1 bd-highlight desktop-version">
                     <Swiper
                         direction={'vertical'}
-                        slidesPerView={1}
-                        // onSlideChange={() => console.log('slide change')}
-                        // onSwiper={(swiper) => console.log(swiper)}
+                        slidesPerView={1}                         
                         centeredSlides={true}
                         autoplay={{
                             delay: 2500,
@@ -64,5 +47,6 @@ const Notices = () => {
         </>
 
     );
+   
 };
 export default Notices;

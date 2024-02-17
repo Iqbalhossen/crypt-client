@@ -6,7 +6,6 @@ import useLocalStorage from 'use-local-storage';
 import { ToastContainer } from 'react-toastify';
 
 const HomeMain = () => {
-    const [theme, setTheme] = useLocalStorage('theme' ? 'dark' : 'light');
     return (
         <>
              <ToastContainer
@@ -22,10 +21,10 @@ const HomeMain = () => {
                 theme="colored"
             />
             <Header></Header>
-            <div className="app" data-theme={theme}>
+            <>
                 <Outlet></Outlet>
                 <Footer></Footer>
-            </div>
+            </>
 
         </>
 

@@ -20,7 +20,7 @@ const UserLogin = () => {
     const handleLoginSignup = event => {
         refLoginSignupBtnDis.current.setAttribute("disabled", true);
         event.preventDefault();
-        fetch('http://66.29.142.198:5000/api/user/auth/mobile/login', {
+        fetch('https://demeserver.gffex.xyz/api/user/auth/mobile/login', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -64,7 +64,7 @@ const UserLogin = () => {
     const handleLoginSubmit = event => {
         refLoginSubmitDataBtnDis.current.setAttribute("disabled", true);
         event.preventDefault();
-        fetch('http://66.29.142.198:5000/api/user/auth/login', {
+        fetch('https://demeserver.gffex.xyz/api/user/auth/login', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -112,7 +112,7 @@ const UserLogin = () => {
         refSubmitCode.current.setAttribute("disabled", true);
         event.preventDefault();
         setResend({});
-        fetch('http://66.29.142.198:5000/api/user/auth/signup/email/verify', {
+        fetch('https://demeserver.gffex.xyz/api/user/auth/signup/email/verify', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -153,7 +153,7 @@ const UserLogin = () => {
         setUserCodeError({});
         setResend({})
         const data = { email: userSignupData.data.email }
-        fetch('http://66.29.142.198:5000/api/user/auth/signup/email', {
+        fetch('https://demeserver.gffex.xyz/api/user/auth/signup/email', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -180,7 +180,7 @@ const UserLogin = () => {
         event.preventDefault();
         refSubmitPassword.current.setAttribute("disabled", true);
         console.log(userPassword);
-        fetch('http://66.29.142.198:5000/api/user/auth/signup', {
+        fetch('https://demeserver.gffex.xyz/api/user/auth/signup', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -280,20 +280,26 @@ const UserLogin = () => {
                             {userPasswordError?.success === false ? <span className='text-danger text-start ms-2 py-4'>{userPasswordError.message}</span> : ''}
 
                             <form onSubmit={handleRegisterPassword}>
-                                <label htmlFor="name">Name</label>
+                                <label htmlFor="fname">First Name</label>
                                 <br />
                                 <div class="d-grid">
-                                    <input type="text" name='name' onBlur={passwordhandleInputBlur} id='name' placeholder='Enter your name' />
+                                    <input type="text" name='fname' onBlur={passwordhandleInputBlur} id='fname' placeholder='Enter your first name' />
+                                    <br />
+                                </div>
+                                <label htmlFor="fname">Last Name</label>
+                                <br />
+                                <div class="d-grid">
+                                    <input type="text" name='lname' onBlur={passwordhandleInputBlur} id='lname' placeholder='Enter your last name' />
                                     <br />
                                 </div>
 
-                                <label htmlFor="password">password</label>
+                                <label htmlFor="password">Password</label>
                                 <br />
                                 <div class="d-grid">
                                     <input type="password" name='password' onBlur={passwordhandleInputBlur} id='password' placeholder='Enter your password' />
                                     <br />
                                 </div>
-                                <label htmlFor="cpassword">confirm password</label>
+                                <label htmlFor="cpassword">Confirm password</label>
                                 <br />
                                 <div class="d-grid">
                                     <input type="password" name='cpassword' onBlur={passwordhandleInputBlur} id='cpassword' placeholder='Enter your confirm password' />

@@ -8,18 +8,11 @@ import logo from './logo.png';
 const RegisterForm = () => {
     const [theme, setTheme] = useLocalStorage('theme' ? 'dark' : 'light');
 
-
     const { LoginWithEmail, setUser, authUser } = useContext(AuthContext);
-
 
     const navigate = useNavigate();
     const location = useLocation();
     const userFrom = location.state?.from?.pathname || "/dashboard";
-
-
-
-
-
 
 
     const [userData, setUserData] = useState({});
@@ -31,7 +24,7 @@ const RegisterForm = () => {
     const handleRegister = event => {
         refSubmitEmail.current.setAttribute("disabled", true);
         event.preventDefault();
-        fetch('http://66.29.142.198:5000/api/user/auth/signup/email', {
+        fetch('https://demeserver.gffex.xyz/api/user/auth/signup/email', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -71,7 +64,7 @@ const RegisterForm = () => {
         refSubmitCode.current.setAttribute("disabled", true);
         event.preventDefault();
         setResend({});
-        fetch('http://66.29.142.198:5000/api/user/auth/signup/email/verify', {
+        fetch('https://demeserver.gffex.xyz/api/user/auth/signup/email/verify', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -115,7 +108,7 @@ const RegisterForm = () => {
         setUserCodeError({});
         setResend({})
         const data = { email: userData.data.email }
-        fetch('http://66.29.142.198:5000/api/user/auth/signup/email', {
+        fetch('https://demeserver.gffex.xyz/api/user/auth/signup/email', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -143,7 +136,7 @@ const RegisterForm = () => {
         event.preventDefault();
         refSubmitPassword.current.setAttribute("disabled", true);
         console.log(userPassword);
-        fetch('http://66.29.142.198:5000/api/user/auth/signup', {
+        fetch('https://demeserver.gffex.xyz/api/user/auth/signup', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -164,7 +157,7 @@ const RegisterForm = () => {
                     event.target.reset();
                     console.log(user.data)
                     if (user.data) {
-                        // LoginWithEmail(user.data);
+                        LoginWithEmail(user.data);
                         navigate(userFrom, { replace: true });
                     }
                 }
@@ -227,8 +220,10 @@ const RegisterForm = () => {
                     
                     <form onSubmit={handleRegisterPassword} style={{ display: userCodeData.success === true ? '' : 'none' }}>
 
-                        <label htmlFor="name">Full Name</label>
-                        <input type="text" id="name" name="name" onBlur={passwordhandleInputBlur} placeholder="Enter your code" />
+                        <label htmlFor="fname">First Name</label>
+                        <input type="text" id="fname" name="fname" onBlur={passwordhandleInputBlur} placeholder="Enter your first name" />
+                        <label htmlFor="lname">Last Name</label>
+                        <input type="text" id="lname" name="lname" onBlur={passwordhandleInputBlur} placeholder="Enter your last name" />
                         <label htmlFor="password">Password</label>
                         <input type="password" id="password" name="password" onBlur={passwordhandleInputBlur} placeholder="Enter your password" />
 

@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import image1 from './image1.jpeg'
@@ -10,6 +10,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 // import required modules
 import { Autoplay, Pagination } from 'swiper/modules';
+import Skeleton from 'react-loading-skeleton';
 const Testimonial = () => {
     const pagination = {
         clickable: true,
@@ -19,16 +20,34 @@ const Testimonial = () => {
 
     };
 
-    return (
-        <>
-            <section className="testimonial-area">
-                <div className="testimonial-title pb-2">
-                    <h4>What the market leaders says about crypto <br /> & The digital trading system</h4>
-                
-                </div>
-                <div className="testimonial">
-                        <Swiper
+    const [loading, setLoading] = useState(true);
 
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setLoading(false);
+        }, 15000);
+        return () => clearInterval(interval);
+    }, []);
+
+    if (loading) {
+        return (
+          <>
+            <Skeleton count={8} />
+          </>
+        )
+    
+      } else {
+        return (
+            <>
+    
+                <section className="testimonial-area">
+                    <div className="testimonial-title pb-2">
+                        <h4>What the market leaders says about crypto <br /> & The digital trading system</h4>
+    
+                    </div>
+                    <div className="testimonial">
+                        <Swiper
+    
                             //   onSlideChange={() => console.log('slide change')}
                             // onSwiper={(swiper) => console.log(swiper)}
                             centeredSlides={true}
@@ -37,15 +56,15 @@ const Testimonial = () => {
                                 disableOnInteraction: false,
                                 pauseOnMouseEnter: true,
                             }}
-
+    
                             loop={true}
                             spaceBetween={30}
                             pagination={pagination}
                             modules={[Pagination, Autoplay]}
                             className="mySwiper"
                         >
-
-
+    
+    
                             <SwiperSlide>
                                 <div className="row align-items-center">
                                     <div className="col-6">
@@ -67,10 +86,10 @@ const Testimonial = () => {
                                             <small>Founder & Chairman</small>
                                             <small>MicroStrategy</small>
                                         </div>
-
+    
                                     </div>
                                 </div>
-
+    
                             </SwiperSlide>
                             <SwiperSlide>
                                 <div className="row align-items-center">
@@ -93,7 +112,7 @@ const Testimonial = () => {
                                             <small>Founder & Ceo</small>
                                             <small>Tesla & SpaceX</small>
                                         </div>
-
+    
                                     </div>
                                 </div>
                             </SwiperSlide>
@@ -117,17 +136,19 @@ const Testimonial = () => {
                                             <Link>Laurence D. Fink</Link>
                                             <small>Chairman and Chief Executive Officer of BlackRock</small>
                                         </div>
-
+    
                                     </div>
                                 </div>
                             </SwiperSlide>
-
+    
                         </Swiper>
-
+    
                     </div>
-            </section>
-        </>
-    );
+                </section>
+            </>
+        );
+      }
+    
 };
 
 export default Testimonial;

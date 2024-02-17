@@ -9,24 +9,11 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 // import required modules
 import { Autoplay, Pagination } from 'swiper/modules';
+import Skeleton from 'react-loading-skeleton';
 
 
-const PopularCryptocurrencies = () => {
-
-    const [data, setData] = useState([]);
-
-    useEffect(() => {
-        fetch(`http://66.29.142.198:5000/api/frontend/home/cryptocurrencies/view`, {
-            method: 'GET',
-        })
-            .then(res => res.json())
-            .then(data => {
-                setData(data?.data);
-            });
-
-
-    }, [])
-    
+const PopularCryptocurrencies = ({data}) => {
+  
     let menu = ['Top Futures', 'Hot', 'Newest', 'Top Volume', 'Top Gainers']
 
 
@@ -43,13 +30,7 @@ const PopularCryptocurrencies = () => {
                 setCoin(data);
                 // console.log(data)
             });
-        // axios.get(url).then((response) => {
-        //     const theUsers = response.data;
-        //     setCoin(theUsers);
-        // });
     }, []);
-
-
 
     return (
 
@@ -64,25 +45,7 @@ const PopularCryptocurrencies = () => {
                             <div className="pc-tabs-nav">
                                 <div className="pc-tabs-nav-list">
                                     <div className="pc-swiper-custom-pagination" />
-                                    {/* <div className="pc-tab-nav-item-hot">
-                                        <Link to='#'><span>Top Futures</span>
-                                        <span class="hot-list_makerTitle">Maker 0% / Taker 0.02%</span>
-                                        </Link>
-                                    </div>
-                                    <span className="pc-tab-nav-item">
-                                        Newest
-                                    </span>
-                                    <div className="pc-tab-nav-item">
-                                        <Link to='#'>Hot</Link>
-                                    </div>
-                                    <div className="pc-tab-nav-item">
-                                        <Link to='#'>Top Volume</Link>
-                                    </div>
-                                    <div className="pc-tab-nav-item-hot-change">
-                                        <Link to='#'><span>Top Gainers</span>
-                                        <span class="hot-list_changes">159.74%</span>
-                                        </Link>
-                                    </div> */}
+                                
                                 </div>
                                 <div className="notice-more-btn  bd-highlight">
                                     <a class="notices_more__UuCER" target="_blank" rel="noopener noreferrer" href="https://www.mexc.com/support/categories/360000254192"><span>View More</span><svg class="sc-gEvEer hSTeNi mx-icon iconfont iconic_arrow1 notices_arrow__hcJeo" focusable="false" width="1em" height="1em" fill="currentColor" aria-hidden="true" viewBox="0 0 1024 1024" data-icon="ArrowRightOutlined"><path d="M128 469.333333h604.586667l-152.746667-153.173333L640 256l256 256-256 256-60.16-60.16L732.586667 554.666667H128z"></path></svg></a>
@@ -303,6 +266,8 @@ const PopularCryptocurrencies = () => {
 
         </>
     );
+
+   
 };
 
 export default PopularCryptocurrencies;

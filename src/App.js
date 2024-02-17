@@ -4,6 +4,8 @@ import './lightTheme.css';
 import './index.css';
 import './responsive.css';
 import 'react-toastify/dist/ReactToastify.css';
+import 'react-loading-skeleton/dist/skeleton.css'
+import "@leenguyen/react-flip-clock-countdown/dist/index.css";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import HomeMain from './Components/Layouts/HomeMain';
@@ -46,6 +48,23 @@ import Demo from './Components/Demo/Demo';
 import SupportTickets from './Components/Page/SupportTickets/SupportTickets/SupportTickets';
 import SupportTicketsAdd from './Components/Page/SupportTickets/SupportTicketsAdd/SupportTicketsAdd';
 import SupportTicketsView from './Components/Page/SupportTickets/SupportTicketsView/SupportTicketsView';
+import ProfileUpdate from './Components/Page/User/ProfileUpdate/ProfileUpdate';
+import PasswordChange from './Components/Page/User/PasswordChange/PasswordChange';
+import AllMarkets from './Components/Home/AllMarkets/AllMarkets';
+import ChatPage from './Components/LiveChatsPage/ChatPage/ChatPage';
+import FixedDepositPage from './Components/Page/User/FixedDeposit/FixedDepositPage';
+import FixedDeposit from './Components/Page/User/FixedDeposit/FixedDeposit';
+import MiningPage from './Components/Page/User/Mining/MiningPage';
+import Mining from './Components/Page/User/Mining/Mining';
+import Loan from './Components/Page/User/Loan/Loan';
+import MobileFixedDepositPage from './Components/Mobile/Pages/MobileFixedDeposit/MobileFixedDepositPage';
+import MobileFixedDeposit from './Components/Mobile/Pages/MobileFixedDeposit/MobileFixedDeposit';
+import MobileFixedDepositHistory from './Components/Mobile/Pages/MobileFixedDeposit/MobileFixedDepositHistory';
+import MobileMiningPage from './Components/Mobile/Pages/MobileMining/MobileMiningPage';
+import MobileMining from './Components/Mobile/Pages/MobileMining/MobileMining';
+import MiningHistory from './Components/Mobile/Pages/MobileMining/History/MiningHistory';
+import MobileLoan from './Components/Mobile/Pages/MobileLoan/MobileLoan';
+import MobileTrade from './Components/Mobile/Pages/MobileTrade/MobileTrade';
 function App() {
 
   return (
@@ -56,6 +75,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/demo" element={<Demo />} />
           <Route path="/:slug" element={<DynamicPage />} />
+          <Route path="/all/market" element={<AllMarkets />} />
           <Route path="dashboard" element={<UserPrivateRoute><UserDashBoard /></UserPrivateRoute>} />
           <Route path="/user/id-auth" element={<UserPrivateRoute><Identification /></UserPrivateRoute>} />
           <Route path="/user/referral" element={<UserPrivateRoute><Referral /></UserPrivateRoute>} />
@@ -72,6 +92,14 @@ function App() {
           <Route path="/ticket" element={<UserPrivateRoute><SupportTickets/></UserPrivateRoute>} />
           <Route path="/ticket/new" element={<UserPrivateRoute><SupportTicketsAdd/></UserPrivateRoute>} />
           <Route path="/ticket/view/:id" element={<UserPrivateRoute><SupportTicketsView/></UserPrivateRoute>} />
+          <Route path="/user/profile/update" element={<UserPrivateRoute><ProfileUpdate/></UserPrivateRoute>} />
+          <Route path="/user/password/update" element={<UserPrivateRoute><PasswordChange/></UserPrivateRoute>} />
+          <Route path="/user/fixed/deposit" element={<UserPrivateRoute><FixedDepositPage/></UserPrivateRoute>} />
+          <Route path="/user/fixed/deposit/:id" element={<UserPrivateRoute><FixedDeposit/></UserPrivateRoute>} />
+          <Route path="/user/loan" element={<UserPrivateRoute><Loan/></UserPrivateRoute>} />
+          <Route path="/user/mining" element={<UserPrivateRoute><MiningPage/></UserPrivateRoute>} />
+          <Route path="/user/mining/:id" element={<UserPrivateRoute><Mining/></UserPrivateRoute>} />
+          <Route path="/live/chat" element={<UserPrivateRoute><ChatPage/></UserPrivateRoute>} />
         </Route>
         <Route path="login" element={<LoginRoute><LoginForm /></LoginRoute>} />
         <Route path="register" element={<LoginRoute><RegisterForm /></LoginRoute>} />
@@ -89,6 +117,14 @@ function App() {
         <Route path="/kyc/nid/card" element={<NIDCard />} />
         <Route path="/kyc/passport" element={<Passport />} />
         <Route path="/futures" element={<Futures />} />
+        <Route path="/fixed/deposit" element={<MobileFixedDepositPage />} />
+        <Route path="/fixed/deposit/:id" element={<MobileFixedDeposit />} />
+        <Route path="/fixed/deposit/history" element={<MobileFixedDepositHistory />} />
+        <Route path="/mining" element={<MobileMiningPage />} />
+        <Route path="/mining/:id" element={<MobileMining />} />
+        <Route path="/mining/history" element={<MiningHistory />} />
+        <Route path="/loan" element={<MobileLoan />} />
+        <Route path="/trade" element={<MobileTrade />} />
       </Routes>
     </BrowserRouter>
 

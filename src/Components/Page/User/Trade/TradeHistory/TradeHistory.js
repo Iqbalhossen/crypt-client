@@ -8,7 +8,7 @@ const TradeHistory = () => {
     const [tradeData, setTradeData] = useState([]);
 
     useEffect(() => {
-        fetch(`http://66.29.142.198:5000/api/user/trade/log/history/${authUser?._id}`, {
+        fetch(`https://demeserver.gffex.xyz/api/user/trade/log/history/${authUser?._id}`, {
             method: 'GET',
         })
             .then(res => res.json())

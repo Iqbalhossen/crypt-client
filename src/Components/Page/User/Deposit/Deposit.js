@@ -13,7 +13,7 @@ const Deposit = () => {
     const [depostData, setdepostData] = useState([]);
 
     useEffect(() => {
-        fetch(`http://66.29.142.198:5000/api/user/payment/gateways/manual/all/view/${authUser?._id}`, {
+        fetch(`https://demeserver.gffex.xyz/api/user/payment/gateways/manual/all/view/${authUser?._id}`, {
             method: 'GET',
         })
             .then(res => res.json())
@@ -182,10 +182,7 @@ const Deposit = () => {
                                      
                                         {depostData.map((data, index) => <SingleItem data={data} key={data?._id}></SingleItem>)}
 
-                                        <tr className='total'>
-                                            <th>Total</th>
-                                            <td className="total-val" colSpan="4">€1,134,860.04</td>
-                                        </tr>
+                                       
                                     </tbody>
                                 </table>
                             </div>

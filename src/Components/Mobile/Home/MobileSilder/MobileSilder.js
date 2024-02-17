@@ -26,7 +26,7 @@ const MobileSilder = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetch(`http://66.29.142.198:5000/api/frontend/home/slider/view`, {
+        fetch(`https://demeserver.gffex.xyz/api/frontend/home/slider/view`, {
             method: 'GET',
         })
             .then(res => res.json())
@@ -54,7 +54,7 @@ const MobileSilder = () => {
 
     
     // useEffect(() => {
-    //     fetch(`http://66.29.142.198:5000/api/kyc/verify/view/${authFindUser?._id}`, {
+    //     fetch(`https://demeserver.gffex.xyz/api/kyc/verify/view/${authFindUser?._id}`, {
     //         method: 'GET',
     //     })
     //         .then(res => res.json())
@@ -107,7 +107,7 @@ const MobileSilder = () => {
                     >
 
                         {data.map((data, index) => <SwiperSlide key={data?._id}>
-                            <img src={`http://66.29.142.198:5000/${data?.image_url}`} alt="" />
+                            <img src={`https://demeserver.gffex.xyz/${data?.image_url}`} alt="" />
                         </SwiperSlide>)}
                     </Swiper>
 
@@ -140,7 +140,7 @@ const MobileSilder = () => {
                             <div className="mobile-user-info-menu">
                                 <h2>Nick Name</h2>
                                 <p>arfiniqbal8@gmail.com</p>
-                                <p>UID: 1</p>
+                                {/* <p>UID: 1</p> */}
                             </div>
                             
                             <div className="mobile-user-kyc-verify-btn">
@@ -175,6 +175,42 @@ const MobileSilder = () => {
                                     <p>
                                         <FontAwesomeIcon className='me-2' icon="fa-solid fa-gear" /> 
                                         Setting
+                                    </p>
+                                </div>
+                                <FontAwesomeIcon icon="fa-solid fa-angle-right" />
+                            </Link>
+
+                        </div>
+                        <div className="mobile-toogle-menu-items-area pb-3">
+                            <Link to='/fixed/deposit' className='d-flex justify-content-between align-items-center'>
+                                <div className="mobile-toogle-menu-item-conten">
+                                    <p>
+                                        <FontAwesomeIcon className='me-2' icon="fa-solid fa-gear" /> 
+                                        Fixed Deposit
+                                    </p>
+                                </div>
+                                <FontAwesomeIcon icon="fa-solid fa-angle-right" />
+                            </Link>
+
+                        </div>
+                        <div className="mobile-toogle-menu-items-area pb-3">
+                            <Link to='/mining' className='d-flex justify-content-between align-items-center'>
+                                <div className="mobile-toogle-menu-item-conten">
+                                    <p>
+                                        <FontAwesomeIcon className='me-2' icon="fa-solid fa-gear" /> 
+                                        Mining
+                                    </p>
+                                </div>
+                                <FontAwesomeIcon icon="fa-solid fa-angle-right" />
+                            </Link>
+
+                        </div>
+                        <div className="mobile-toogle-menu-items-area pb-3">
+                            <Link to='/loan' className='d-flex justify-content-between align-items-center'>
+                                <div className="mobile-toogle-menu-item-conten">
+                                    <p>
+                                        <FontAwesomeIcon className='me-2' icon="fa-solid fa-gear" /> 
+                                        Loan
                                     </p>
                                 </div>
                                 <FontAwesomeIcon icon="fa-solid fa-angle-right" />

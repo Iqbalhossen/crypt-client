@@ -13,40 +13,56 @@ import MobileHome from '../Mobile/Home/MobileHome'
 import MobileMenu from '../Mobile/Home/MobileMenu/MobileMenu'
 import SingleHome from './SingleHome'
 import Testimonial from './Testimonial/Testimonial'
-
+import Skeleton from 'react-loading-skeleton'
+import { Circles } from 'react-loader-spinner'
+import AllMarkets from './AllMarkets/AllMarkets'
+import TradingPlatform from './TradingPlatform/TradingPlatform'
 
 export default function Home() {
-
+  const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch(`http://66.29.142.198:5000/api/frontend/home/home/section`, {
+    fetch(`https://demeserver.gffex.xyz/api/frontend/home/home/section`, {
       method: 'GET',
     })
       .then(res => res.json())
       .then(data => {
         setData(data.data);
+        setLoading(false)
       });
   }, [])
+
+
+  if (loading) {
+    return (
+      <>
+        <div className="loader-section d-flex justify-content-center align-items-center">
+          <Circles
+            height="80"
+            width="80"
+            color="#4fa94d"
+            ariaLabel="circles-loading"
+            wrapperStyle={{}}
+            wrapperClass=""
+            visible={true}
+          />
+        </div>
+        {/* <Skeleton count={30} height={20} /> */}
+      </>
+    );
+  }
+
+
   return (
     <>
 
       {data.map((data, index) =>
         <SingleHome data={data} key={data?._id}></SingleHome>
       )}
-
-      {/* <Videos></Videos>
-      <Bonus></Bonus>
-      <Notices></Notices>
-      <Sliders></Sliders>
-      <PopularCryptocurrencies></PopularCryptocurrencies>
-      <NewListing></NewListing>
-      <ChooseGffex></ChooseGffex>
-      <DiscoverProducts></DiscoverProducts>
-      <JoinCommunity></JoinCommunity>
-      <TradeApp></TradeApp>
-     */}
-     <Testimonial></Testimonial>
+      {/* <AllMarkets></AllMarkets>
+      <Testimonial></Testimonial>
+      <TradingPlatform></TradingPlatform> */}
       <MobileHome></MobileHome>
     </>
   )

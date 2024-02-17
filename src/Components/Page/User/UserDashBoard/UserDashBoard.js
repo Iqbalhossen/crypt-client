@@ -20,11 +20,19 @@ const UserDashBoard = () => {
                             <FontAwesomeIcon icon="fa-solid fa-shield" />
                             <p>Practice</p>
                             </Link>  
+                            <Link to='/user/fixed/deposit' className="user-nav-items">
+                            <FontAwesomeIcon icon="fa-solid fa-shield" />
+                            <p>Fixed Deposit</p>
+                            </Link>  
+                            <Link to='/user/mining' className="user-nav-items">
+                            <FontAwesomeIcon icon="fa-solid fa-shield" />
+                            <p>Mining</p>
+                            </Link>  
                             <Link to='/user/trade' className="user-nav-items">
                             <FontAwesomeIcon icon="fa-solid fa-money-bill-trend-up" />
                             <p>Trade</p>
                             </Link>   
-                                                                                                               
+                                                                                                    
                             <Link to='/assets/deposit' className="user-nav-items">
                             <FontAwesomeIcon icon="fa-solid fa-receipt" />
                             <p>Deposit</p>
@@ -32,6 +40,10 @@ const UserDashBoard = () => {
                             <Link to='/assets/withdraw' className="user-nav-items">
                             <FontAwesomeIcon icon="fa-solid fa-square-check" />
                             <p>Withdrawal <br /> Addresses/Contacts</p>
+                            </Link>                       
+                            <Link to='/user/loan' className="user-nav-items">
+                            <FontAwesomeIcon icon="fa-solid fa-square-check" />
+                            <p>Loan</p>
                             </Link>                       
                             <Link to='/user/id-auth' className="user-nav-items">
                             <FontAwesomeIcon icon="fa-solid fa-id-card-clip" />
@@ -44,6 +56,16 @@ const UserDashBoard = () => {
                             <Link to='/assets/record' className="user-nav-items">
                             <FontAwesomeIcon icon="fa-brands fa-quinscape" />
                             <p>Transaction Log</p>
+                            </Link>                       
+                                                
+                            <Link to='/user/profile/update' className="user-nav-items">
+                            <FontAwesomeIcon icon="fa-brands fa-quinscape" />
+                            <p>Profile Update</p>
+                            </Link>                       
+                                                
+                            <Link to='/user/password/update' className="user-nav-items">
+                            <FontAwesomeIcon icon="fa-brands fa-quinscape" />
+                            <p>Change Password</p>
                             </Link>                       
                                                 
                         </div>

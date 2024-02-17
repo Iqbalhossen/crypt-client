@@ -11,21 +11,8 @@ import 'swiper/css/pagination';
 
 // import required modules
 import { Autoplay, Grid } from 'swiper/modules';
-const NewListing = () => {
 
-    const [data, setData] = useState([]);
-
-    useEffect(() => {
-        fetch(`http://66.29.142.198:5000/api/frontend/home/new/listing/view`, {
-            method: 'GET',
-        })
-            .then(res => res.json())
-            .then(data => {
-                setData(data?.data);
-            });
-
-
-    }, [])
+const NewListing = ({data}) => {
 
     return (
         <>
@@ -360,12 +347,11 @@ const NewListing = () => {
                     </div>
 
                 </div>
-                {/* <div className="text-center pb-5 pt-2 ">
-                    <Link to='#' className="btn btn-primary px-5 py-3">Start Trading</Link>
-                </div> */}
+              
             </div>
         </>
     );
+    
 };
 
 export default NewListing;
